@@ -1,8 +1,26 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import AboutUs from "./pages/AboutUs.jsx";
+import ContactUs from "./pages/ContactUs.jsx";
+import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
+
 export default function App() {
   return (
- <div>
- <h1>Min inlämning</h1>
-  <p> hej hur är läget</p>
-  </div>
+    <BrowserRouter>
+      <header>
+        <Navbar />
+      </header>
+
+      <main style={{ padding: "1rem", minHeight: "70vh" }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+        </Routes>
+      </main>
+
+      <Footer />
+    </BrowserRouter>
   );
 }

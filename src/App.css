@@ -40,3 +40,38 @@
 .read-the-docs {
   color: #888;
 }
+
+/* MARK: Testimonials-styling */
+
+.testimonials {
+  padding: 3rem 1.5rem;
+  background-color: #ffffff;
+}
+
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  background-color: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-author {
+  font-weight: 600;
+  text-align: right;
+}
+

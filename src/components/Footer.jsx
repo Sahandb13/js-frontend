@@ -1,3 +1,4 @@
+// MARK: Footer-komponent
 export default function Footer() {
   return (
     <footer

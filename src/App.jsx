@@ -1,9 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
 import Home from "./pages/Home.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
-import ContactUs from "./pages/ContactUs.jsx";
+import ContactUs from "./pages/contactUs.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
+
 
 export default function App() {
   return (

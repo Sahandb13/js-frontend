@@ -40,7 +40,7 @@ export default function Home() {
     <>
       {/* MARK: HeroSection med props */}
       <HeroSection
-        ctaLabel="Läs mer"
+        ctaLabel="Discover More"
         onCtaClick={handleHeroClick}
       />
 

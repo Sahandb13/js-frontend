@@ -1,61 +1,53 @@
  /* MARK: Global styles */ 
- /* Detta fanns från början i create-react-app */
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  box-sizing: border-box;
 /* MARK: Hero Section - färger och layout från Figma */
+}
+
+.hero-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 4.5rem; /* ändra denna för att göra större/mindre */
+  line-height: 1; /* radavstånd mellan raderna */
+}
+
+.hero-welcome {
+  font-weight: 600;
+  color: #F8B400; /* gul färg från Figma */
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: left /* vänsterjusterad */
+ 
+} 
+/* första raden */
+.hero-line1 {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* andra raden */
+.hero-line2 {
+  font-weight: 600;
+  color: #ffffff; /
+}
+
 
 .hero {
+ width: 100vw; /* full bredd */ /* för att matcha Figma-designen */
  background-color: rgba(18, 55, 42, 0.8); /* #12372A vid 80% opacitet tagen från Figma */
   min-height: 715px;         /* samma px som Figma */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white
+  align-items: center; /* centrerar innehållet vertikalt */
+  justify-content: center; /* centrerar innehållet både horisontellt och vertikalt */
+  text-align: center; /* horisontell centrering av text */
+  color: white;
 }
-
+.hero-inner {
+  margin-right: 40%; /* för att matcha Figma-layouten */
+}
 
 /* MARK: Testimonials-styling */
 

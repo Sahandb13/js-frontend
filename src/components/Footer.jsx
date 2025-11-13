@@ -10,7 +10,7 @@ export default function Footer() {
         marginTop: "2rem",
       }}
     >
-      <p>&copy; {new Date().getFullYear()} Mitt företag. Alla rättigheter förbehållna.</p>
+      <p>&copy; {new Date().getFullYear()} StorAid, All rights reserved.</p>
     </footer>
   );
 }

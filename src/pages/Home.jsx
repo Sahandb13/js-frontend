@@ -1,5 +1,6 @@
 // MARK: Home-sida
 
+import { useState, useEffect } from "react"; // Används för att hämta kundomdömen från API <3 
 import HeroSection from "../components/HeroSection.jsx";
 import TestimonialsSection from "../components/TestimonialsSection.jsx";
 import LatestBlogsSection from "../components/LatestBlogsSection.jsx";
@@ -9,15 +10,40 @@ export default function Home() {
   function handleHeroClick() {
     alert("LURAD DET FUNKAR INTE ÄN!"); // utfyllnadstext
   }
-/* MARK: Testdata för Testimonials */
-  // Testdata för Testimonials
-  const dummyTestimonials = [
-    { text: "N/A", author: "Sahand, Malmö" }, // utfyllnadstext
-    { text: "N/A.", author: "Sahand, Göteborg" }, // utfyllnadstext
-    { text: "N/A.", author: "Sahand, Stockholm" }, // utfyllnadstext
-  ];
-/* MARK: Testdata för Blogs */
-  // Testdata för Blogs
+
+
+  const [testimonials, setTestimonials] = useState([]);
+  const [isLoadingTestimonials, setIsLoadingTestimonials] = useState(true);
+  const [testimonialsError, setTestimonialsError] = useState(null);
+
+
+  useEffect(() => {
+    async function fetchTestimonials() {
+      try {
+        const response = await fetch(
+          "https://win25-jsf-assignment.azurewebsites.net/api/testimonials"
+        );
+
+        if (!response.ok) {
+          throw new Error("Kunde inte hämta testimonials");
+        }
+
+        const data = await response.json();
+
+       
+        setTestimonials(data);
+      } catch (error) {
+        console.error(error);
+        setTestimonialsError(error.message);
+      } finally {
+        setIsLoadingTestimonials(false);
+      }
+    }
+
+    fetchTestimonials();
+  }, []);
+
+  
   const dummyBlogs = [
     {
       title: "Bygga återanvändbara komponenter i React",
@@ -32,23 +58,33 @@ export default function Home() {
     {
       title: "Koppla ett Web API till React",
       date: "2025-10-20",
-      excerpt: "N/A.",  // utfyllnadstext
+      excerpt: "N/A.", // utfyllnadstext
     },
   ];
 
   return (
     <>
       {/* MARK: HeroSection med props */}
-      <HeroSection
-        ctaLabel="Discover More"
-        onCtaClick={handleHeroClick}
-      />
+      <HeroSection ctaLabel="Discover More" onCtaClick={handleHeroClick} />
 
-      {/* skickar in testimonials */}
-      <TestimonialsSection testimonials={dummyTestimonials} />
+      {/* Testimonials från API */}
+      {isLoadingTestimonials && <p>-------.</p>}
 
-      {/* skickar in bloggar */}
+      {testimonialsError && (
+        <p className="error-text">
+          ------------
+        </p>
+      )}
+
+      {!isLoadingTestimonials && !testimonialsError && (
+        <TestimonialsSection testimonials={testimonials} />
+      )}
+
+  
       <LatestBlogsSection blogs={dummyBlogs} />
+
+    
+      <FAQSection />
     </>
   );
 }

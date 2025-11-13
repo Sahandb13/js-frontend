@@ -1,13 +1,14 @@
-// MARK: FAQSection - visar frågor och svar (accordion)
+// MARK: FAQSection - visar frågor och svar
 
 import { useState } from "react";
 
-export default function FAQSection({ faqs }) {
+export default function FAQSection({ faqs = [] }) {
+
   // Vilken fråga är öppen? (null = ingen öppen)
   const [openIndex, setOpenIndex] = useState(null);
 
   function handleToggle(index) {
-    // Om man klickar på samma fråga igen → stäng
+    // Om man klickar på samma fråga igen så stängs det
     if (openIndex === index) {
       setOpenIndex(null);
     } else {

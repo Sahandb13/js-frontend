@@ -10,12 +10,42 @@ export default function Home() {
   function handleHeroClick() {
     alert("LURAD DET FUNKAR INTE ÄN!"); // utfyllnadstext
   }
-
-  const [Blogs, setBlogs] = useState(([])); // utfyllnadstext
+  const [faqs, setFaqs] = useState([]);
+  const [blogs, setBlogs] = useState([]); // lista över bloggar
   const [testimonials, setTestimonials] = useState([]);
   const [isLoadingTestimonials, setIsLoadingTestimonials] = useState(true);
   const [testimonialsError, setTestimonialsError] = useState(null);
 
+  async function fetchFaqs() {
+    try {
+    const response = await fetch(
+      "https://win25-jsf-assignment.azurewebsites.net/api/faqs" // kolla exakta endpointen!
+    );
+    if (!response.ok) {
+      throw new Error("Kunde inte hämta FAQs");
+    }
+    const data = await response.json();
+    setFaqs(data);
+  } catch (error) {
+    console.error("fetchFaqs:", error);
+  }
+}
+
+  async function fetchBlogs() {
+    try {
+      const response = await fetch(
+        "https://win25-jsf-assignment.azurewebsites.net/api/blogs"
+      );
+      if (!response.ok) {
+        throw new Error("Kunde inte hämta blogs");
+      }
+      const data = await response.json();
+      setBlogs(data);
+    } catch (error) {
+      console.error("fetchBlogs:", error);
+      // optionally set an error state for blogs
+    }
+  }
 
   useEffect(() => {
     async function fetchTestimonials() {
@@ -23,15 +53,12 @@ export default function Home() {
         const response = await fetch(
           "https://win25-jsf-assignment.azurewebsites.net/api/testimonials"
         );
-        fetchblogs();
-    
+
         if (!response.ok) {
           throw new Error("Kunde inte hämta testimonials");
         }
 
         const data = await response.json();
-
-       
         setTestimonials(data);
       } catch (error) {
         console.error(error);
@@ -42,26 +69,9 @@ export default function Home() {
     }
 
     fetchTestimonials();
+    fetchBlogs();
+    fetchFaqs();
   }, []);
-
-  
-  const dummyBlogs = [
-    {
-      title: "Bygga återanvändbara komponenter i React",
-      date: "2025-11-01",
-      excerpt: "N/A...", // utfyllnadstext
-    },
-    {
-      title: "Varför Vite är så snabbt och smidigt",
-      date: "2025-10-28",
-      excerpt: "N/A.", // utfyllnadstext
-    },
-    {
-      title: "Koppla ett Web API till React",
-      date: "2025-10-20",
-      excerpt: "N/A.", // utfyllnadstext
-    },
-  ];
 
   return (
     <>
@@ -69,11 +79,11 @@ export default function Home() {
       <HeroSection ctaLabel="Discover More" onCtaClick={handleHeroClick} />
 
       {/* Testimonials från API */}
-      {isLoadingTestimonials && <p>-------.</p>}
+      {isLoadingTestimonials && <p>Loading testimonials.</p>}
 
       {testimonialsError && (
         <p className="error-text">
-          ------------
+          Error loading testimonials: {testimonialsError}
         </p>
       )}
 
@@ -81,11 +91,9 @@ export default function Home() {
         <TestimonialsSection testimonials={testimonials} />
       )}
 
-  
-      <LatestBlogsSection blogs={Blogs} />
+      <LatestBlogsSection blogs={blogs} />
 
-    
-      <FAQSection />
+      <FAQSection faqs={faqs} />
     </>
   );
 }

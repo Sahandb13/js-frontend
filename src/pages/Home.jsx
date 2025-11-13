@@ -23,7 +23,8 @@ export default function Home() {
         const response = await fetch(
           "https://win25-jsf-assignment.azurewebsites.net/api/testimonials"
         );
-
+        fetchblogs();
+    
         if (!response.ok) {
           throw new Error("Kunde inte hämta testimonials");
         }

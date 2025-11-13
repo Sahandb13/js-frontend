@@ -11,7 +11,7 @@ export default function Home() {
     alert("LURAD DET FUNKAR INTE ÄN!"); // utfyllnadstext
   }
 
-
+  const [Blogs, setBlogs] = useState(([])); // utfyllnadstext
   const [testimonials, setTestimonials] = useState([]);
   const [isLoadingTestimonials, setIsLoadingTestimonials] = useState(true);
   const [testimonialsError, setTestimonialsError] = useState(null);
@@ -81,7 +81,7 @@ export default function Home() {
       )}
 
   
-      <LatestBlogsSection blogs={dummyBlogs} />
+      <LatestBlogsSection blogs={Blogs} />
 
     
       <FAQSection />

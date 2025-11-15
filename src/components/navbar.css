@@ -1,0 +1,46 @@
+.navbar {
+  background-color: #12372A; /* tagen från  Figma */
+  padding: 1rem 2rem;
+  color: white;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.nav-cta {
+  background-color: #F6C445; /* tagen frfån Figma */
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.nav-cta:hover {
+  background-color: #e4b233;
+}

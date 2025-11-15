@@ -107,37 +107,115 @@ body {
   opacity: 0.9;
 }
 
-/* MARK: Testimonials-styling */
+
+/* MARK: Testimonials-styling inspirerad av figma */
 
 .testimonials {
-  padding: 3rem 1.5rem;
-  background-color: #ffffff;
+  width: 100%;
+  background-color: #12372a;   /* mörkgrön bakgrund */
+  padding: 5rem 0 6rem 0;
 }
 
-.testimonials-title {
+.testimonials-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
   text-align: center;
-  margin-bottom: 2.5rem;
-  font-size: 2rem;
+}
+
+/* Överrubriken "Testimonials" – GUL och centrerad */
+.testimonials-tag {
+  color: #f6c445;      
+  font-size: 1rem;
   font-weight: 600;
-}
-
-.testimonial-item {
-  background-color: #f5f5f5;
-  padding: 1.8rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
-}
-
-.testimonial-text {
-  font-style: italic;
   margin-bottom: 0.75rem;
 }
 
-.testimonial-author {
-  font-weight: 600;
-  text-align: right;
-  color: #12372a;
+/* Huvudrubrik "See What Our Client Have to Say" */
+.testimonials-heading {
+  font-size: 2.8rem;      
+  font-weight: 700;
+  color: #ffffff;       
+  margin-bottom: 1rem;
 }
+
+/* liten underrad text */
+.testimonials-subtitle {
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e1e1e1;
+}
+
+/* Griden med 3 kort */
+.testimonials-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.testimonial-item {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  text-align: left;
+}
+
+
+.testimonial-stars {
+  color: #0f7b3b;   /* grön */
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Texten i korten */
+.testimonial-text {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #d0d0d0;
+  flex-shrink: 0;
+}
+
+.testimonial-meta {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.testimonial-name {
+  font-weight: 700;
+  color: #12372a;
+  margin: 0;
+}
+
+.testimonial-role {
+  font-size: 0.85rem;
+  color: #777;
+  margin: 0;
+}
+
+/* Gul citat-ikon */
+.testimonial-quote-icon {
+  font-size: 2rem;
+  color: #f6c445;
+}
+
+
 
 /* MARK: Latest Blogs-styling */
 

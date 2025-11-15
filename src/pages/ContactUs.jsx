@@ -42,7 +42,7 @@ export default function ContactUs() {
     setErrors(newErrors);
     /* MARK : Formulärvalidering ovan */
 
-    // Om inga fel > skicka formuläret
+  
     if (Object.keys(newErrors).length === 0) {
       try {
         const response = await fetch(
@@ -58,7 +58,7 @@ export default function ContactUs() {
               email: email,
               phoneNumber: phoneNumber,
               subject: subject,
-              comment: message, // API:et förväntar "comment"
+              comment: message,
             }),
           }
         );
@@ -94,7 +94,6 @@ export default function ContactUs() {
       </div>
 
       <div className="contact-layout">
-        {/* Vänster: formulär, samma som du hade innan */}
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-field">
             <label>
@@ -163,15 +162,14 @@ export default function ContactUs() {
           </button>
         </form>
 
-        {/* Höger: info-block som liknar Figma-kontaktkortet */}
         <aside className="contact-info-panel">
           <h2>Visit our storage facility</h2>
           <p>
-            StorAid Storage Center
+            StorAid Facilities
             <br />
-            Storvägen 12
+            Bärnstensgatan 32
             <br />
-            123 45 Lagertown
+            25361 Helsingborg
           </p>
 
           <h3>Contact</h3>

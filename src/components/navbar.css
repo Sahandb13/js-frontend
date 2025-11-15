@@ -3,14 +3,14 @@
   color: #ffffff;
   padding: 0.4rem 2rem;
   display: flex;
-  justify-content: flex-start; /* <-- ändrad från flex-end */
+  justify-content: flex-start; /* Justera innehållet till vänster */
   gap: 2rem;
   font-size: 0.9rem;
 }
 
 /* navbar styling */
 .navbar {
-  background-color: #12372A; /* huvudfärgen från Figma */
+  background-color: #ffffff; /* huvudfärgen från Figma */
   padding: 1rem 2rem;
   color: #ffffff;
 }
@@ -34,7 +34,7 @@
 }
 
 .nav-links a {
-  color: #ffffff;
+  color: #000;
   text-decoration: none;
   font-size: 1rem;
 }

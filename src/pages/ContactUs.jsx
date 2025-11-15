@@ -1,5 +1,5 @@
-// MARK: Contact-sida med formulär
-// Har använt väldigt lite co-pilot för denna del. Har skrivit 90% själv för att lära mig hantera formulär i React.
+// Formulärlogik och validering är skriven för hand, samt tagit komponentstruktur från tidigare komponenter.
+
 
 import { useState } from "react";
 
@@ -9,12 +9,9 @@ export default function ContactUs() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [errors, setErrors] = useState({});
 
-  const [errors, setErrors] = useState({}); // sparar felmeddelanden
-
-  async function handleSubmit(event) {
-    event.preventDefault(); // stoppar sidan från att ladda om
-
+  function validateForm() {
     const newErrors = {};
 
     if (!name.trim()) {
@@ -39,50 +36,56 @@ export default function ContactUs() {
       newErrors.message = "Meddelande är obligatoriskt.";
     }
 
+    return newErrors;
+  }
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    const newErrors = validateForm();
     setErrors(newErrors);
-    /* MARK : Formulärvalidering ovan */
 
-  
-    if (Object.keys(newErrors).length === 0) {
-      try {
-        const response = await fetch(
-          "https://win25-jsf-assignment.azurewebsites.net/api/Contact",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              accept: "*/*",
-            },
-            body: JSON.stringify({
-              name: name,
-              email: email,
-              phoneNumber: phoneNumber,
-              subject: subject,
-              comment: message,
-            }),
-          }
-        );
+    if (Object.keys(newErrors).length > 0) {
+      return;
+    }
 
-        if (!response.ok) {
-          const errorText = await response.text().catch(() => "");
-          console.error("API error:", response.status, errorText);
-          alert("Något gick fel vid skickandet av formuläret.");
-          return;
+    try {
+      const response = await fetch(
+        "https://win25-jsf-assignment.azurewebsites.net/api/Contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            accept: "*/*",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            phoneNumber,
+            subject,
+            comment: message,
+          }),
         }
+      );
 
-        alert("Tack! Ditt meddelande har skickats.");
-
-        // Efteråt töms fälten
-        setName("");
-        setEmail("");
-        setPhoneNumber("");
-        setSubject("");
-        setMessage("");
-        setErrors({});
-      } catch (error) {
-        console.error("Fel vid formulärskick:", error);
-        alert("Kunde inte skicka formuläret just nu. Försök igen senare.");
+      if (!response.ok) {
+        const errorText = await response.text().catch(() => "");
+        console.error("API error:", response.status, errorText);
+        alert("Något gick fel vid skickandet av formuläret.");
+        return;
       }
+
+      alert("Tack! Ditt meddelande har skickats.");
+
+      setName("");
+      setEmail("");
+      setPhoneNumber("");
+      setSubject("");
+      setMessage("");
+      setErrors({});
+    } catch (error) {
+      console.error("Fel vid formulärskick:", error);
+      alert("Kunde inte skicka formuläret just nu. Försök igen senare.");
     }
   }
 

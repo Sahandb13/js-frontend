@@ -30,8 +30,8 @@ export default function AboutUs() {
         {/* Höger: text */}
         <div className="about-info">
           <h2 className="about-title">
-            Providing a Safe Space for <br />
-            Your Treasured Items
+            Providing a Safe Space for Your Treasured Items <br />
+            
           </h2>
 
           <p className="about-text">

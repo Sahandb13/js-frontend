@@ -4,7 +4,7 @@ html,
 body,
 #root {
   height: 100%;
-  width: 100%;        /* Viktigt för fullbredd */
+  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -15,48 +15,64 @@ body,
   box-sizing: border-box;
 }
 
-/* App-layout så navbar + footer är samma på alla sidor */
+body {
+  font-family: "Arial", sans-serif;
+  color: #333;
+  background-color: #f3f4f6;
+}
+
 .app-layout {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  max-width: 1920px;   /* Figma-bredd */
+  max-width: 1920px;
   width: 100%;
-  margin: 0 auto;      /* Centrerar hela appen på större skärmar */
+  margin: 0 auto;
 }
-.navbar.home{
-  color: #FFD700; /* Gult enl figma */  
-}
+
 .page-content {
   flex: 1;
   width: 100%;
 }
 
-/* MARK: Global styles */
 
-body {
-  font-family: "Arial", sans-serif;
-  color: #333;
-  background-color: #f3f4f6; /* Ljus bakgrund så sektionerna "ligger" på den */
-}
-
-/* MARK: Hero Section - färger och layout från Figma */
+/* MARK: Hero section (Home) */
 
 .hero {
-  width: 100%; 
+  width: 100%;
   background-color: rgba(18, 55, 42, 0.95);
   min-height: 715px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: left;
-  color: white;
-  padding: 0 2rem;     /* Samma sidomarginal som navbaren */
+  color: #fff;
+  padding: 0 2rem;
 }
 
 .hero-inner {
-  max-width: 1200px;   /* Centrerad content-bredd */
+  max-width: 1200px;
   width: 100%;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-left {
+  z-index: 2;
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 12px;
 }
 
 .hero-title {
@@ -73,14 +89,17 @@ body {
   margin-bottom: 1rem;
 }
 
+.hero-line1,
+.hero-line2 {
+  color: #fff;
+}
+
 .hero-line1 {
   font-weight: 700;
-  color: #ffffff;
 }
 
 .hero-line2 {
   font-weight: 600;
-  color: #ffffff;
 }
 
 .hero-subtitle {
@@ -99,57 +118,24 @@ body {
   background-color: #f6c445;
   color: #12372a;
   font-weight: 600;
-  font-size: 1rem;
   cursor: pointer;
 }
 
 .hero-button:hover {
   opacity: 0.9;
 }
-/* GRID-LAYOUT för hero (vänster text, höger bild) */
-.hero-inner {
-  max-width: 1200px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr; 
-  align-items: center;
-  gap: 2rem;
-}
 
 
-.hero-left {
-  z-index: 2;
-}
-
-.hero-right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-image {
-  width: 100%;
-  max-width: 480px;       
-  height: auto;
-  border-radius: 12px;    
-}
-
-
-/* MARK: Testimonials-styling inspirerad av figma */
+/* MARK: Testimonials */
 
 .testimonials {
   width: 100%;
-  padding: 5rem 0 6rem 0;
-
-  /* Bakgrundsbild */
-  background-image: url("/public/testimonials-bg.svg");
+  padding: 5rem 0 6rem;
+  background-image: url("/testimonials-bg.svg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-
   position: relative;
 }
-
 
 .testimonials::before {
   content: "";
@@ -158,7 +144,6 @@ body {
   background: rgba(18, 55, 42, 0.92);
   z-index: 0;
 }
-
 
 .testimonials-inner {
   max-width: 1200px;
@@ -169,33 +154,24 @@ body {
   z-index: 1;
 }
 
-
-/* Överrubriken "Testimonials" – GUL och centrerad */
 .testimonials-tag {
-  color: #f6c445;      
-  font-size: 1rem;
+  color: #f6c445;
   font-weight: 600;
   margin-bottom: 0.75rem;
 }
 
-/* Huvudrubrik "See What Our Client Have to Say" */
 .testimonials-heading {
-  font-size: 2.8rem;      
+  font-size: 2.8rem;
   font-weight: 700;
-  color: #ffffff;       
-  margin-bottom: 1rem;
+  color: #fff;
 }
 
-/* liten underrad text */
 .testimonials-subtitle {
   max-width: 700px;
-  margin: 0 auto 3rem auto;
-  font-size: 1rem;
-  line-height: 1.6;
+  margin: 0 auto 3rem;
   color: #e1e1e1;
 }
 
-/* Griden med 3 kort */
 .testimonials-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -203,23 +179,19 @@ body {
 }
 
 .testimonial-item {
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
   text-align: left;
 }
 
-
 .testimonial-stars {
-  color: #0f7b3b;   /* grön */
+  color: #0f7b3b;
   margin-bottom: 1rem;
-  font-size: 1.2rem;
 }
 
-/* Texten i korten */
 .testimonial-text {
-  font-size: 1rem;
   color: #444;
   line-height: 1.6;
   margin-bottom: 1.5rem;
@@ -227,47 +199,41 @@ body {
 
 .testimonial-footer {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
 .testimonial-avatar {
   width: 48px;
   height: 48px;
-  border-radius: 50%;
   background-color: #d0d0d0;
-  flex-shrink: 0;
+  border-radius: 50%;
 }
 
 .testimonial-meta {
-  flex: 1;
   margin-left: 1rem;
 }
 
 .testimonial-name {
   font-weight: 700;
   color: #12372a;
-  margin: 0;
 }
 
 .testimonial-role {
   font-size: 0.85rem;
   color: #777;
-  margin: 0;
 }
 
-/* Gul citat-ikon */
 .testimonial-quote-icon {
-  font-size: 2rem;
   color: #f6c445;
+  font-size: 2rem;
 }
 
 
-
-/* MARK: Latest Blogs-styling */
+/* MARK: Latest blogs */
 
 .latest-blogs {
-  padding: 3rem 1.5rem 4rem 1.5rem;
+  padding: 3rem 1.5rem 4rem;
   background-color: #f9f9f9;
 }
 
@@ -279,7 +245,7 @@ body {
 }
 
 .blog-card {
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 12px;
   padding: 1.8rem;
   border: 1px solid #e0e0e0;
@@ -287,104 +253,89 @@ body {
 }
 
 .blog-title {
-  font-size: 1.25rem;
-  margin-bottom: 0.4rem;
   font-weight: 600;
+  margin-bottom: 0.4rem;
 }
 
 .blog-date {
   font-size: 0.9rem;
   color: #888;
-  margin-bottom: 0.9rem;
 }
 
 .blog-excerpt {
-  font-size: 0.98rem;
-  line-height: 1.5;
   color: #444;
+  line-height: 1.5;
 }
 
-/* MARK: Contact-sida och formulär */
+
+/* MARK: Contact page */
 
 .contact-page {
   max-width: 1200px;
-  margin: 3rem auto 4rem auto;
+  margin: 4rem auto 6rem;
   padding: 0 1.5rem;
 }
 
 .contact-header h1 {
-  font-size: 2.2rem;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #12372a;
   margin-bottom: 0.5rem;
 }
 
 .contact-header p {
+  margin: 0;
   color: #555;
-  margin-bottom: 2rem;
 }
 
-/* Två kolumner: formulär + info-panel */
+/* layout: formulär + info-panel */
 .contact-layout {
   display: grid;
-  grid-template-columns: 2fr 1.3fr;
-  gap: 2rem;
-  align-items: flex-start;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2.5rem;
+  margin-top: 2rem;
 }
 
-/* Formuläret (vänster) */
+/* vänster sida – formulärkortet */
 .contact-form {
+  background-color: #ffffff;
+  padding: 2rem 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  gap: 1.2rem;
 }
 
 .form-field label {
   font-weight: 500;
+  color: #333;
 }
 
 .form-field input,
 .form-field textarea {
   width: 100%;
-  margin-top: 0.25rem;
-  padding: 0.5rem 0.75rem;
-  border-radius: 6px;
+  padding: 0.7rem 0.9rem;
+  border-radius: 8px;
   border: 1px solid #ccc;
-}
-
-/* Info-panel (höger) */
-.contact-info-panel {
-  background-color: #12372a;
-  color: #ffffff;
-  padding: 2rem;
-  border-radius: 12px;
-  line-height: 1.5;
-}
-
-.contact-info-panel h2 {
-  margin-top: 0;
-  margin-bottom: 0.75rem;
-}
-
-.contact-info-panel h3 {
-  margin-top: 1.5rem;
-  margin-bottom: 0.25rem;
   font-size: 1rem;
 }
 
-/* Skicka-knappen */
+textarea {
+  resize: none;
+}
+
+/* knapp */
 .contact-submit {
-  margin-top: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 999px;
-  border: none;
   background-color: #f6c445;
   color: #12372a;
-  cursor: pointer;
-  align-self: flex-start;
+  border: none;
+  padding: 1rem;
+  border-radius: 999px;
+  font-size: 1.1rem;
   font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
 }
 
 .contact-submit:hover {
@@ -394,68 +345,90 @@ body {
 .error-text {
   color: #b00020;
   font-size: 0.9rem;
-  margin-top: 0.25rem;
+}
+
+/* höger sida – mörkgrön panel */
+
+.contact-info-panel {
+  background-color: #12372a;
+  color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  line-height: 1.6;
+}
+
+.contact-info-panel h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.contact-info-panel h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.contact-info-panel p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
 }
 
 
-/* MARK: HERO SECTION */
+/* MARK: About page */
+
+.about-page {
+  background-color: #f3f4f6;
+  width: 100%;
+}
+
 .about-hero {
-  max-width: 1200px;
-  margin: 4rem auto;
-  padding: 0 1.5rem;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 3rem;
-  align-items: start;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
 }
 
-.about-image-wrapper {
-  position: relative;
-}
-.about-image {
+.about-image-placeholder {
   width: 100%;
+  height: 380px;
+  background-color: #ccc;
   border-radius: 8px;
-  background-color: #ccc; 
 }
-
 
 .about-stats {
-  position: absolute;
-  bottom: -40px;
-  left: 20px;
-  right: 20px;
   background-color: #0f2d23;
-  display: flex;
-  justify-content: space-around;
-  padding: 1.5rem 1rem;
+  color: #fff;
+  padding: 1.5rem 2rem;
   border-radius: 10px;
-  color: white;
+  margin-top: -40px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.about-stats h3 {
+.stat h3 {
+  font-size: 2rem;
+  margin: 0;
   color: #f6c445;
-  font-size: 1.8rem;
-  margin: 0;
-  text-align: center;
 }
 
-.about-stats p {
-  font-size: 0.85rem;
-  margin: 0;
-  text-align: center;
+.stat p {
+  font-size: 0.9rem;
 }
 
 .about-title {
   font-size: 2.5rem;
-  font-weight: 700;
   color: #12372a;
-  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .about-text {
-  max-width: 500px;
-  color: #444;
-  margin-bottom: 2rem;
+  color: #555;
+  margin: 1rem 0 2rem;
 }
 
 .about-boxes {
@@ -465,21 +438,14 @@ body {
 }
 
 .about-box {
-  flex: 1;
-  padding: 1.5rem;
-  border: 1px solid #ddd;
-  border-radius: 12px;
   background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.5rem;
+  flex: 1;
 }
 
-.about-box h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.mission {
+.about-box.mission {
   border: 2px solid #f6c445;
 }
 
@@ -491,46 +457,38 @@ body {
 
 .discover-btn {
   background-color: #f6c445;
+  padding: 0.8rem 1.8rem;
   border: none;
-  padding: 0.9rem 2rem;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 600;
   color: #12372a;
   cursor: pointer;
 }
 
+.about-contact {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
 .contact-icon {
-  background-color: #12372a;
-  color: white;
   width: 42px;
   height: 42px;
+  background-color: #12372a;
+  color: #fff;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.about-contact {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
 
-.contact-label {
-  font-weight: 600;
-  margin: 0;
-}
-
-.contact-number {
-  margin: 0;
-  color: #12372a;
-}
-
-
-/* MARK: FAQ-styling */
+/* MARK: FAQ */
 
 .faq {
-  padding: 3rem 1.5rem 4rem 1.5rem;
+  padding: 3rem 1.5rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .faq h2 {
@@ -549,136 +507,20 @@ body {
 .faq-item {
   border: 1px solid #e0e0e0;
   border-radius: 12px;
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .faq-question {
-  width: 100%;
   padding: 1rem 1.2rem;
   background: none;
   border: none;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  font-weight: 500;
-  font-size: 1rem;
   cursor: pointer;
-}
-
-.faq-question span:last-child {
-  font-size: 1.3rem;
+  font-weight: 500;
 }
 
 .faq-answer {
-  padding: 0 1.2rem 1rem 1.2rem;
-  font-size: 0.96rem;
+  padding: 0 1.2rem 1rem;
   color: #444;
-}
-
-/* MARK: Home-sektioners layout */
-
-.latest-blogs,
-.faq {
-  max-width: 1200px;
-  margin: 3rem auto 4rem auto; 
-  padding: 0 1.5rem;
-}
-.about-hero {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 3rem;
-  max-width: 1200px;
-  margin: 3rem auto;
-  padding: 0 1.5rem;
-  align-items: start;
-}
-
-/* Stor grå ruta – skapad i CSS */
-.about-image-placeholder {
-  width: 100%;
-  height: 380px;
-  background-color: #ccc;
-  border-radius: 8px;
-}
-
-/* Stats-boxen under bilden */
-.about-stats {
-  background-color: #0f2d23;
-  color: white;
-  padding: 1.5rem 2rem;
-  border-radius: 10px;
-  margin-top: -40px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.stat h3 {
-  font-size: 2rem;
-  color: #f6c445;
-  margin: 0;
-}
-
-.stat p {
-  font-size: 0.9rem;
-  margin-top: 0.25rem;
-}
-
-/* TEXT SEKTION */
-.about-title {
-  font-size: 2.5rem;
-  color: #12372a;
-  font-weight: 700;
-}
-
-.about-text {
-  color: #555;
-  margin: 1rem 0 2rem 0;
-  line-height: 1.6;
-}
-
-/* Vision + Mission boxar */
-.about-boxes {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.about-box {
-  flex: 1;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 1.5rem;
-}
-
-/* Gul border runt Mission (som i Figma) */
-.about-box.mission {
-  border: 2px solid #f6c445;
-}
-
-/* Discover-knapp + Kontakt-del */
-.about-actions {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.discover-btn {
-  background-color: #f6c445;
-  padding: 0.8rem 1.8rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.about-contact {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.contact-icon {
-  font-size: 2rem;
-  color: #12372a;
 }

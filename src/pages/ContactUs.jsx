@@ -40,7 +40,7 @@ export default function ContactUs() {
     }
 
     setErrors(newErrors);
-/* MARK : Formulärvalidering ovan */
+    /* MARK : Formulärvalidering ovan */
 
     // Om inga fel > skicka formuläret
     if (Object.keys(newErrors).length === 0) {
@@ -86,78 +86,103 @@ export default function ContactUs() {
     }
   }
 
-  return ( // Med hjälp av ai har jag skapat en enkel kontaktformulär
+  return (
     <div className="contact-page">
-      <h1>Contact Us</h1>
-      <p>Fyll i formuläret nedan. Fält med * är obligatoriska.</p>
+      <div className="contact-header">
+        <h1>Contact Us</h1>
+        <p>Fyll i formuläret nedan. Fält med * är obligatoriska.</p>
+      </div>
 
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <div className="form-field">
-          <label>
-            Namn *<br />
-            <input
-              type="text"
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-            />
-          </label>
-          {errors.name && <p className="error-text">{errors.name}</p>}
-        </div>
+      <div className="contact-layout">
+        {/* Vänster: formulär, samma som du hade innan */}
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <div className="form-field">
+            <label>
+              Namn *<br />
+              <input
+                type="text"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+              />
+            </label>
+            {errors.name && <p className="error-text">{errors.name}</p>}
+          </div>
 
-        <div className="form-field">
-          <label>
-            E-post *<br />
-            <input
-              type="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-            />
-          </label>
-          {errors.email && <p className="error-text">{errors.email}</p>}
-        </div>
+          <div className="form-field">
+            <label>
+              E-post *<br />
+              <input
+                type="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+              />
+            </label>
+            {errors.email && <p className="error-text">{errors.email}</p>}
+          </div>
 
-        <div className="form-field">
-          <label>
-            Telefonnummer *<br />
-            <input
-              type="tel"
-              value={phoneNumber}
-              onChange={(event) => setPhoneNumber(event.target.value)}
-            />
-          </label>
-          {errors.phoneNumber && (
-            <p className="error-text">{errors.phoneNumber}</p>
-          )}
-        </div>
+          <div className="form-field">
+            <label>
+              Telefonnummer *<br />
+              <input
+                type="tel"
+                value={phoneNumber}
+                onChange={(event) => setPhoneNumber(event.target.value)}
+              />
+            </label>
+            {errors.phoneNumber && (
+              <p className="error-text">{errors.phoneNumber}</p>
+            )}
+          </div>
 
-        <div className="form-field">
-          <label>
-            Ämne *<br />
-            <input
-              type="text"
-              value={subject}
-              onChange={(event) => setSubject(event.target.value)}
-            />
-          </label>
-          {errors.subject && <p className="error-text">{errors.subject}</p>}
-        </div>
+          <div className="form-field">
+            <label>
+              Ämne *<br />
+              <input
+                type="text"
+                value={subject}
+                onChange={(event) => setSubject(event.target.value)}
+              />
+            </label>
+            {errors.subject && <p className="error-text">{errors.subject}</p>}
+          </div>
 
-        <div className="form-field">
-          <label>
-            Meddelande *<br />
-            <textarea
-              rows="4"
-              value={message}
-              onChange={(event) => setMessage(event.target.value)}
-            />
-          </label>
-          {errors.message && <p className="error-text">{errors.message}</p>}
-        </div>
+          <div className="form-field">
+            <label>
+              Meddelande *<br />
+              <textarea
+                rows="4"
+                value={message}
+                onChange={(event) => setMessage(event.target.value)}
+              />
+            </label>
+            {errors.message && <p className="error-text">{errors.message}</p>}
+          </div>
 
-        <button type="submit" className="contact-submit">
-          Skicka
-        </button>
-      </form>
+          <button type="submit" className="contact-submit">
+            Skicka
+          </button>
+        </form>
+
+        {/* Höger: info-block som liknar Figma-kontaktkortet */}
+        <aside className="contact-info-panel">
+          <h2>Visit our storage facility</h2>
+          <p>
+            StorAid Storage Center
+            <br />
+            Storvägen 12
+            <br />
+            123 45 Lagertown
+          </p>
+
+          <h3>Contact</h3>
+          <p>📞 +46 8 123 122 44</p>
+          <p>✉ contact@domain.com</p>
+
+          <h3>Opening hours</h3>
+          <p>Mon–Fri: 09:00 – 18:00</p>
+          <p>Sat–Sun: 10:00 – 16:00</p>
+        </aside>
+      </div>
     </div>
   );
 }

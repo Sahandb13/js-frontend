@@ -68,8 +68,31 @@ body {
 }
 
 .hero-line2 {
-  font-weight: 600;
+  font-weight: 600;   
   color: #ffffff;
+}
+.hero-subtitle {
+  margin-top: 1.5rem;
+  max-width: 520px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e7e7e7; /* ljusgrå för bättre läsbarhet */
+}
+
+.hero-button {
+  margin-top: 2rem;
+  padding: 0.9rem 2.2rem;
+  border-radius: 999px;
+  border: none;
+  background-color: #f6c445; /* samma gula som i navbaren */
+  color: #12372a;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hero-button:hover {
+  opacity: 0.9;
 }
 
 /* MARK: Testimonials-styling */
@@ -81,70 +104,68 @@ body {
 
 .testimonials-title {
   text-align: center;
-  margin-bottom: 2rem;
-}
-
-.testimonials-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 .testimonial-item {
   background-color: #f5f5f5;
-  padding: 1.5rem;
-  border-radius: 8px;
+  padding: 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
 }
 
 .testimonial-text {
   font-style: italic;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .testimonial-author {
   font-weight: 600;
   text-align: right;
+  color: #12372a;
 }
+
 
 /* MARK: Latest Blogs-styling */
 
 .latest-blogs {
-  padding: 3rem 1.5rem;
+  padding: 3rem 1.5rem 4rem 1.5rem;
   background-color: #f9f9f9;
 }
 
 .latest-blogs h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
-.blogs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-
-.blog-card {
+.blog-card { 
   background-color: #ffffff;
-  border-radius: 8px;
-  padding: 1.5rem;
+  border-radius: 12px;
+  padding: 1.8rem;
   border: 1px solid #e0e0e0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
 }
 
 .blog-title {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
 }
 
 .blog-date {
   font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 0.75rem;
+  color: #888;
+  margin-bottom: 0.9rem;
 }
 
 .blog-excerpt {
-  font-size: 1rem;
-  line-height: 1.4;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: #444;
 }
 
 /* MARK: Contact-sida och formulär */
@@ -208,3 +229,62 @@ body {
   margin: 0 auto;
   padding: 3rem 1.5rem;
 }
+
+/* MARK: FAQ-styling */
+
+.faq {
+  padding: 3rem 1.5rem 4rem 1.5rem;
+}
+
+.faq h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.faq-question span:last-child {
+  font-size: 1.3rem;
+}
+
+.faq-answer {
+  padding: 0 1.2rem 1rem 1.2rem;
+  font-size: 0.96rem;
+  color: #444;
+}
+
+
+/* MARK: Home-sektioners layout */
+
+.testimonials,
+.latest-blogs,
+.faq {
+  max-width: 1200px;
+  margin: 3rem auto 4rem auto; /* centrerar sektionerna och lägger till marginal ovanför och nedanför */
+}
+

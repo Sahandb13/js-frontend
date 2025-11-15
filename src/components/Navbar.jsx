@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <header>
       <div className="topbar">
-        <span>📞 +46 700 00 00 00</span>
+        <span>📞 +46 8 123 122 44</span>
         <span>✉ contact@domain.com</span>
       </div>
 

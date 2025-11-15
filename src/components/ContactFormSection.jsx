@@ -1,4 +1,4 @@
-// Enkel kontaktsektion – du kan klippa ut allt formulärinnehåll från ContactUs hit
+// Enkel kontaktsektion – ett formulär med fält för namn, e-post, telefonnummer, ämne och meddelande.
 
 export default function ContactFormSection({
   name,

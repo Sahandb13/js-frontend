@@ -40,12 +40,13 @@ export default function ContactUs() {
     }
 
     setErrors(newErrors);
+/* MARK : Formulärvalidering ovan */
 
-    // Om inga fel → skicka till API
+    // Om inga fel > skicka formuläret
     if (Object.keys(newErrors).length === 0) {
       try {
         const response = await fetch(
-          "https://win25-jsf-assignment.azurewebsites.net/api/contact",
+          "https://win25-jsf-assignment.azurewebsites.net/api/Contact",
           {
             method: "POST",
             headers: {
@@ -85,7 +86,7 @@ export default function ContactUs() {
     }
   }
 
-  return (
+  return ( // Med hjälp av ai har jag skapat en enkel kontaktformulär
     <div className="contact-page">
       <h1>Contact Us</h1>
       <p>Fyll i formuläret nedan. Fält med * är obligatoriska.</p>

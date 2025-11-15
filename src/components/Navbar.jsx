@@ -14,7 +14,7 @@ export default function Navbar() {
           <div className="nav-logo">StorAid</div>
 
           <div className="nav-links">
-            <Link to="/">Home</Link>
+            <Link to="/">Home</Link> 
             <Link to="/about-us">About Us</Link>
             <Link to="/contact-us">Contact Us</Link>
           </div>

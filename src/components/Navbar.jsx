@@ -19,7 +19,9 @@ export default function Navbar() {
             <Link to="/contact-us">Contact Us</Link>
           </div>
 
-          <button className="nav-cta">Book Now</button>
+          <Link to="/contact-us" className="nav-cta">
+            Book Now
+          </Link>
         </div>
       </nav>
     </header>

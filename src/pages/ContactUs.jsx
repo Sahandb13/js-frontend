@@ -120,7 +120,7 @@ export default function ContactUs() {
           <label>
             Telefonnummer *<br />
             <input
-              type="text"
+              type="tel"
               value={phoneNumber}
               onChange={(event) => setPhoneNumber(event.target.value)}
             />

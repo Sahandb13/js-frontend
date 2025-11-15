@@ -106,22 +106,69 @@ body {
 .hero-button:hover {
   opacity: 0.9;
 }
+/* GRID-LAYOUT för hero (vänster text, höger bild) */
+.hero-inner {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; 
+  align-items: center;
+  gap: 2rem;
+}
+
+
+.hero-left {
+  z-index: 2;
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 480px;       
+  height: auto;
+  border-radius: 12px;    
+}
 
 
 /* MARK: Testimonials-styling inspirerad av figma */
 
 .testimonials {
   width: 100%;
-  background-color: #12372a;   /* mörkgrön bakgrund */
   padding: 5rem 0 6rem 0;
+
+  /* Bakgrundsbild */
+  background-image: url("/public/testimonials-bg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
 }
+
+
+.testimonials::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 55, 42, 0.92);
+  z-index: 0;
+}
+
 
 .testimonials-inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
+
 
 /* Överrubriken "Testimonials" – GUL och centrerad */
 .testimonials-tag {
@@ -413,7 +460,6 @@ body {
 
 /* MARK: Home-sektioners layout */
 
-.testimonials,
 .latest-blogs,
 .faq {
   max-width: 1200px;

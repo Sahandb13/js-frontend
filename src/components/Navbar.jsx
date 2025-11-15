@@ -4,13 +4,11 @@ import "./Navbar.css";
 export default function Navbar() {
   return (
     <header>
-      {/* TOP BAR MED TELEFON & EMAIL */}
       <div className="topbar">
-        <span> 📞+46 735 89 20 39</span>
+        <span>📞 +46 700 00 00 00</span>
         <span>✉ contact@domain.com</span>
       </div>
 
-      {/* HUVUD-NAVIGATION */}
       <nav className="navbar">
         <div className="nav-inner">
           <div className="nav-logo">StorAid</div>

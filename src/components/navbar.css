@@ -1,7 +1,19 @@
+/* TOPBAR (kontaktinfo längst upp) */
+.topbar {
+  background-color: #0f2d23; /* mörkare grön från Figma */
+  color: #ffffff;
+  padding: 0.4rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  font-size: 0.9rem;
+}
+
+/* SJÄLVA NAVIGATIONS-BAREN */
 .navbar {
-  background-color: #12372A; /* tagen från  Figma */
+  background-color: #12372A; /* huvudfärgen från Figma */
   padding: 1rem 2rem;
-  color: white;
+  color: #ffffff;
 }
 
 .nav-inner {
@@ -32,8 +44,9 @@
   text-decoration: underline;
 }
 
+/* CTA-Knappen till höger */
 .nav-cta {
-  background-color: #F6C445; /* tagen frfån Figma */
+  background-color: #F6C445; /* gul från Figma */
   border: none;
   padding: 0.6rem 1.2rem;
   border-radius: 5px;

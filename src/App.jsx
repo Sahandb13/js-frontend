@@ -6,23 +6,22 @@ import ContactUs from "./pages/contactUs.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 
-
 export default function App() {
   return (
     <BrowserRouter>
-      <header>
+      <div className="app-layout">
         <Navbar />
-      </header>
 
-      <main style={{ padding: "1rem", minHeight: "70vh" }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/contact-us" element={<ContactUs />} />
-        </Routes>
-      </main>
+        <main className="page-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/contact-us" element={<ContactUs />} />
+          </Routes>
+        </main>
 
-      <Footer />
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }

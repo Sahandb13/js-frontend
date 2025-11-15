@@ -397,18 +397,135 @@ body {
   margin-top: 0.25rem;
 }
 
-/* MARK: About-sida */
 
-.about-page {
-  background-color: #ffffff;
-  width: 100%;
-}
-
-.about-content {
+/* MARK: HERO SECTION */
+.about-hero {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: start;
 }
+
+.about-image-wrapper {
+  position: relative;
+}
+.about-image {
+  width: 100%;
+  border-radius: 8px;
+  background-color: #ccc; 
+}
+
+
+.about-stats {
+  position: absolute;
+  bottom: -40px;
+  left: 20px;
+  right: 20px;
+  background-color: #0f2d23;
+  display: flex;
+  justify-content: space-around;
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+  color: white;
+}
+
+.about-stats h3 {
+  color: #f6c445;
+  font-size: 1.8rem;
+  margin: 0;
+  text-align: center;
+}
+
+.about-stats p {
+  font-size: 0.85rem;
+  margin: 0;
+  text-align: center;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #12372a;
+  margin-bottom: 1rem;
+}
+
+.about-text {
+  max-width: 500px;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.about-boxes {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.about-box {
+  flex: 1;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+.about-box h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.mission {
+  border: 2px solid #f6c445;
+}
+
+.about-actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.discover-btn {
+  background-color: #f6c445;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #12372a;
+  cursor: pointer;
+}
+
+.contact-icon {
+  background-color: #12372a;
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-contact {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-label {
+  font-weight: 600;
+  margin: 0;
+}
+
+.contact-number {
+  margin: 0;
+  color: #12372a;
+}
+
 
 /* MARK: FAQ-styling */
 
@@ -465,4 +582,103 @@ body {
   max-width: 1200px;
   margin: 3rem auto 4rem auto; 
   padding: 0 1.5rem;
+}
+.about-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  align-items: start;
+}
+
+/* Stor grå ruta – skapad i CSS */
+.about-image-placeholder {
+  width: 100%;
+  height: 380px;
+  background-color: #ccc;
+  border-radius: 8px;
+}
+
+/* Stats-boxen under bilden */
+.about-stats {
+  background-color: #0f2d23;
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat h3 {
+  font-size: 2rem;
+  color: #f6c445;
+  margin: 0;
+}
+
+.stat p {
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+/* TEXT SEKTION */
+.about-title {
+  font-size: 2.5rem;
+  color: #12372a;
+  font-weight: 700;
+}
+
+.about-text {
+  color: #555;
+  margin: 1rem 0 2rem 0;
+  line-height: 1.6;
+}
+
+/* Vision + Mission boxar */
+.about-boxes {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.about-box {
+  flex: 1;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+/* Gul border runt Mission (som i Figma) */
+.about-box.mission {
+  border: 2px solid #f6c445;
+}
+
+/* Discover-knapp + Kontakt-del */
+.about-actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.discover-btn {
+  background-color: #f6c445;
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.about-contact {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-icon {
+  font-size: 2rem;
+  color: #12372a;
 }

@@ -23,7 +23,7 @@ export default function ContactFormSection({
         </label>
         {errors.name && <p className="error-text">{errors.name}</p>}
       </div>
-
+      
       <div className="form-field">
         <label>
           E-post *<br />

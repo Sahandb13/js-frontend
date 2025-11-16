@@ -336,14 +336,14 @@ body {
 .contact-tag {
   color: #f6c445;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1.5rem;
 }
 
 .contact-title {
   font-size: 2.4rem;
   font-weight: 700;
   color: #12372a;
-  margin: 0;
+  margin: -3rem 0 1rem 0;
 }
 
 .contact-text {
@@ -352,13 +352,7 @@ body {
   line-height: 1.6;
 }
 
-.contact-image-placeholder {
-  margin-top: 1.5rem;
-  width: 100%;
-  height: 260px;
-  background-color: #c4c4c4;
-  border-radius: 8px;
-}
+
 
 .contact-form {
   background-color: #fff8dd;

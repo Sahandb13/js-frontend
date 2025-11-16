@@ -69,7 +69,7 @@ export default function ContactUs() {
 
       alert("Tack! Ditt meddelande har skickats.");
 
-      // Återställ formuläret efter lyckat skick
+      // Återställ formuläret efteråt
       setName("");
       setEmail("");
       setPhoneNumber("");
@@ -84,14 +84,12 @@ export default function ContactUs() {
 
   return (
     <>
-      {/* Sidhuvud med mörkgrön bakgrund */}
+    
       <PageHeader title="Contact Us" />
 
-      {/* Huvudinnehåll för kontakt-sidan */}
       <section className="contact-page">
         <div className="contact-layout">
-
-          {/* Vänster kolumn - informationstext */}
+      
           <div className="contact-left">
             <p className="contact-tag">Get in Touch</p>
 

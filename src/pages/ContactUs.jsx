@@ -1,9 +1,10 @@
-// MARK: Contact-sida – layout efter Figma design
+// MARK: Contact-sida – layout enligt Figma design
 
 import { useState } from "react";
 import PageHeader from "../components/PageHeader";
 
 export default function ContactUs() {
+  // State för formulärfält
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -11,6 +12,7 @@ export default function ContactUs() {
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
 
+  // Valideringsfunktion för formuläret
   function validateForm() {
     const newErrors = {};
 
@@ -29,6 +31,8 @@ export default function ContactUs() {
     return newErrors;
   }
 
+  // Hantera formulärinskick
+  /* Denna funktion är framtagen med hjälp av AI för API-integration och felhantering */
   async function handleSubmit(event) {
     event.preventDefault();
 
@@ -65,6 +69,7 @@ export default function ContactUs() {
 
       alert("Tack! Ditt meddelande har skickats.");
 
+      // Återställ formuläret efter lyckat skick
       setName("");
       setEmail("");
       setPhoneNumber("");
@@ -79,14 +84,14 @@ export default function ContactUs() {
 
   return (
     <>
-      {/* Mörkgrön topp enligt Figma */}
+      {/* Sidhuvud med mörkgrön bakgrund */}
       <PageHeader title="Contact Us" />
 
-      {/* Huvudsektionen under headern */}
+      {/* Huvudinnehåll för kontakt-sidan */}
       <section className="contact-page">
         <div className="contact-layout">
 
-          {/* VÄNSTER SIDA – text + grå ruta */}
+          {/* Vänster kolumn - informationstext */}
           <div className="contact-left">
             <p className="contact-tag">Get in Touch</p>
 
@@ -102,7 +107,7 @@ export default function ContactUs() {
             <div className="contact-image-placeholder" />
           </div>
 
-          {/* HÖGER SIDA – formulärkortet */}
+          {/* Höger kolumn - kontaktformulär */}
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-field">
               <label>

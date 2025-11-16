@@ -1,25 +1,67 @@
-// MARK: LatestBlogsSection – visar bloggkort i grid-layout
-// Kommentarer: Dessa delar är hämtade från DOM – Selektorer & Events
+import { useState } from "react";
 
-export default function LatestBlogsSection({ blogs }) {
+function formatDate(dateString) {
+  if (!dateString) return "Unknown date";
+
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}
+
+function getExcerpt(text, maxLength = 180) {
+  if (text.length <= maxLength) return text;
+  return text.slice(0, maxLength) + "…";
+}
+
+// ⭐ Enskilt bloggkort-komponent (fixar useState korrekt)
+function BlogCard({ blog }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <article className="blog-card">
+      {/* Bild */}
+      <div className="blog-image-wrapper">
+        <img src={blog.imageUrl} alt={blog.title} className="blog-image" />
+      </div>
+
+      {/* Body */}
+      <div className="blog-card-body">
+        {/* Datum */}
+        <div className="blog-date-row">
+          <span className="blog-date-icon">📅</span>
+          <span>{formatDate(blog.created)}</span>
+        </div>
+
+        {/* Titel */}
+        <h3 className="blog-title">{blog.title}</h3>
+
+        {/* Text */}
+        <p className="blog-excerpt">
+          {expanded ? blog.description : getExcerpt(blog.description)}
+        </p>
+
+        {/* ⭐ READ MORE / LESS */}
+        <p
+          className="read-more-link"
+          onClick={() => setExpanded((prev) => !prev)}
+        >
+          {expanded ? "Read less" : "Read more"} →
+        </p>
+      </div>
+    </article>
+  );
+}
+
+// ⭐ Huvudsektionen
+export default function LatestBlogsSection({ blogs = [] }) {
   return (
     <section className="latest-blogs">
-      <h2>Senaste blogginlägg</h2>
-
       <div className="blogs-grid">
-        {blogs.map((blog, index) => (
-          <article key={index} className="blog-card">
-
-            {/* Tagen från DOM - Selektorer & Events */}
-            <h3 className="blog-title">{blog.title}</h3>
-
-            {/* Tagen från DOM - Selektorer & Events */}
-            <p className="blog-date">{blog.date}</p>
-
-            {/* Tagen från DOM - Selektorer & Events */}
-            <p className="blog-excerpt">{blog.excerpt}</p>
-
-          </article>
+        {blogs.map((blog) => (
+          <BlogCard key={blog.id} blog={blog} />
         ))}
       </div>
     </section>

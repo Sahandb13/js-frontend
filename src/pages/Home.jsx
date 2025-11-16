@@ -1,12 +1,13 @@
-// MARK: Home-sida
+// MARK: Home-sida - Huvudkomponent för startsidan
 import { useState, useEffect } from "react";
 import HeroSection from "../components/HeroSection.jsx";
 import TestimonialsSection from "../components/TestimonialsSection.jsx";
 import LatestBlogsSection from "../components/LatestBlogsSection.jsx";
 import FAQSection from "../components/FAQSection.jsx";
-import LogoStrip from "../components/LogoStrip.jsx"; // <-- RÄTT import
+import LogoStrip from "../components/LogoStrip.jsx";
 
 export default function Home() {
+  // State för API-data
   const [faqs, setFaqs] = useState([]);
   const [blogs, setBlogs] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
@@ -15,7 +16,7 @@ export default function Home() {
   const [blogsError, setBlogsError] = useState(null);
   const [faqsError, setFaqsError] = useState(null);
 
-  // Handle click on hero button
+  // Hantera klick på hero-knappen
   const handleDiscoverClick = () => {
     console.log("Discover more clicked - scrolling to about section");
     const aboutSection = document.querySelector('.about-hero');
@@ -24,7 +25,7 @@ export default function Home() {
     }
   };
 
-  // Fetch FAQs
+  // Hämta FAQ-data från API
   const fetchFaqs = async () => {
     try {
       const response = await fetch("https://win25-jsf-assignment.azurewebsites.net/api/faqs");
@@ -36,7 +37,7 @@ export default function Home() {
     }
   };
 
-  // Fetch blogs
+  // Hämta blogginlägg från API
   const fetchBlogs = async () => {
     try {
       const response = await fetch("https://win25-jsf-assignment.azurewebsites.net/api/blogs");
@@ -48,7 +49,8 @@ export default function Home() {
     }
   };
 
-  // Fetch testimonials
+  // Hämta kundomdömen från API
+  /* Denna fetch-funktion är framtagen med hjälp av AI för att hantera loading states */
   const fetchTestimonials = async () => {
     setIsLoadingTestimonials(true);
     setTestimonialsError(null);
@@ -65,6 +67,7 @@ export default function Home() {
     }
   };
 
+  // Ladda all data när komponenten mountas
   useEffect(() => {
     fetchTestimonials();
     fetchBlogs();
@@ -74,13 +77,13 @@ export default function Home() {
   return (
     <div className="home-page">
       
-      {/* HERO */}
+      {/* Hero-sektion - huvudbanner */}
       <HeroSection 
         ctaLabel="Discover More" 
         onCtaClick={handleDiscoverClick} 
       />
 
-      {/* ABOUT US */}
+      {/* Om oss-sektion - företagspresentation */}
       <section className="about-hero">
         <div className="about-image-section">
           <div className="about-image-placeholder">
@@ -111,8 +114,6 @@ export default function Home() {
             Your Treasured Items
           </h2>
 
-        
-
           <div className="about-boxes">
             <div className="about-box">
               <h3>Vision</h3>
@@ -141,30 +142,28 @@ export default function Home() {
         </div>
       </section>
 
-
-      {/* LOGO STRIP */}
+      {/* Logostrip - varumärken som förtroar oss */}
       <LogoStrip />
 
+      {/* Kundomdömen - visar feedback från kunder */}
+      <section className="testimonials-wrapper">
+        {isLoadingTestimonials && <p>Loading testimonials...</p>}
+        {testimonialsError && (
+          <div className="error-state">
+            <p>{testimonialsError}</p>
+            <button onClick={fetchTestimonials} className="retry-button">Try Again</button>
+          </div>
+        )}
 
-      {/* TESTIMONIALS */}
-<section className="testimonials-wrapper">
-  {isLoadingTestimonials && <p>Loading testimonials...</p>}
-  {testimonialsError && (
-    <div className="error-state">
-      <p>{testimonialsError}</p>
-      <button onClick={fetchTestimonials} className="retry-button">Try Again</button>
-    </div>
-  )}
+        {!isLoadingTestimonials && !testimonialsError && (
+          <TestimonialsSection testimonials={testimonials} />
+        )}
+      </section>
 
-  {!isLoadingTestimonials && !testimonialsError && (
-    <TestimonialsSection testimonials={testimonials} />
-  )}
-</section>
-
-      {/* BLOGS */}
+      {/* Senaste blogginlägg - nyttigt innehåll */}
       {blogsError ? <p>{blogsError}</p> : <LatestBlogsSection blogs={blogs} />}
 
-      {/* FAQ */}
+      {/* Vanliga frågor - hjälp till användare */}
       {faqsError ? <p>{faqsError}</p> : <FAQSection faqs={faqs} />}
     </div>
   );

@@ -1,9 +1,9 @@
 // MARK: TestimonialsSection
-// Visar kundomdömen från API
+// Visar kundomdömen från API med korrekt property-mapping
 
 export default function TestimonialsSection({ testimonials = [] }) {
-  // Om det inte finns några testimonials, visa ett meddelande
-  if (testimonials.length === 0) {
+  // Om inga testimonials finns, visa meddelande
+  if (!testimonials || testimonials.length === 0) {
     return (
       <section className="testimonials">
         <div className="testimonials-inner">
@@ -14,6 +14,12 @@ export default function TestimonialsSection({ testimonials = [] }) {
       </section>
     );
   }
+
+  // Hjälpfunktion för att rendera stjärnor baserat på rating
+  /* Denna funktion är framtagen med hjälp av AI för att konvertera rating till visuella stjärnor */
+  const renderStars = (rating) => {
+    return '★'.repeat(rating || 5);
+  };
 
   return (
     <section className="testimonials">
@@ -37,7 +43,7 @@ export default function TestimonialsSection({ testimonials = [] }) {
               className="testimonial-item"
             >
               <div className="testimonial-stars">
-                {'★'.repeat(testimonial.rating || 5)}
+                {renderStars(testimonial.rating)}
               </div>
 
               <p className="testimonial-text">"{testimonial.comment}"</p>

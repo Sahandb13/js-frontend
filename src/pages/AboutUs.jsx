@@ -1,14 +1,19 @@
+// MARK: AboutUs-sida - Företagspresentation enligt Figma design
 import PageHeader from "../components/PageHeader";
 
 export default function AboutUs() {
   return (
     <div className="about-page">
+      {/* Sidhuvud med mörkgrön bakgrund */}
       <PageHeader title="About Us" />
 
+      {/* Huvudsektion med bild och information */}
       <section className="about-hero">
         <div className="about-image-wrapper">
-         <img src="/about-hero.jpg" alt="About Us" className="about-image" />
+          {/* Huvudbild för about-sidan */}
+          <img src="/about-hero.jpg" alt="About Us" className="about-image" />
 
+          {/* Statistiksektion - visar företagets framgångar */}
           <div className="about-stats">
             <div className="stat">
               <h3>12+</h3>
@@ -25,7 +30,7 @@ export default function AboutUs() {
           </div>
         </div>
 
-        {/* Höger: text, vision, mission, knapp + telefon */}
+        {/* Högerkolumn - textinnehåll och information */}
         <div className="about-info">
           <p className="about-tag">About Us</p>
 
@@ -40,6 +45,7 @@ export default function AboutUs() {
             ac blandit nisi, non sodales augue. Phasellus eget elit gravida.
           </p>
 
+          {/* Vision och Mission boxar */}
           <div className="about-boxes">
             <div className="about-box">
               <h3>Vision</h3>
@@ -58,6 +64,7 @@ export default function AboutUs() {
             </div>
           </div>
 
+          {/* Call-to-action och kontaktinformation */}
           <div className="about-actions">
             <button className="discover-btn">Discover More</button>
 

@@ -4,7 +4,8 @@
 
 .page-header {
   width: 100%;
-  background-color: rgba(18, 55, 42, 0.8); /* #12372A @ 80% opacity */
+  /* Bakgrundsfärg med opacity är framtagen med hjälp av AI för korrekt färgvärde */
+  background-color: rgba(18, 55, 42, 0.8);
 }
 
 .page-header-inner {
@@ -18,7 +19,7 @@
   font-size: 3rem;
   font-weight: 600;
   margin: 0 0 1rem;
-  color: #fdfdfd; /* Ljus text mot mörk bakgrund */
+  color: #fdfdfd;
 }
 
 .page-header p {

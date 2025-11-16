@@ -1,4 +1,4 @@
-// MARK: PageHeader – överdel för sidor som About & Contact
+// MARK: PageHeader – Överdel för sidor som About & Contact
 
 import "./PageHeader.css";
 

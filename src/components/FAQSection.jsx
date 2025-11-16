@@ -1,40 +1,56 @@
-// MARK: FAQSection – visar frågor och svar (accordion)
+// src/components/FAQSection.jsx
+// MARK: FAQSection - visar frågor och svar i två kolumner (Figma-layout)
 
 import { useState } from "react";
 
 export default function FAQSection({ faqs = [] }) {
-  // Vilken fråga är öppen? (null = ingen öppen)
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(0); // första öppen
 
   function handleToggle(index) {
-    // Klick på samma fråga stänger den igen
-    setOpenIndex((current) => (current === index ? null : index));
+    setOpenIndex((prev) => (prev === index ? null : index));
   }
 
   return (
     <section className="faq">
-      <h2>Vanliga frågor (FAQ)</h2>
+      <div className="faq-inner">
+        {/* Vänster: rubriker och intro-text */}
+        <div className="faq-left">
+          <p className="faq-tag">FAQs</p>
+          <h2 className="faq-title">Frequently Ask Questions</h2>
+          <p className="faq-intro">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+          </p>
+        </div>
 
-      <div className="faq-list">
-        {faqs.map((item, index) => (
-          <article key={index} className="faq-item">
-            <button
-              type="button"
-              className="faq-question"
-              onClick={() => handleToggle(index)}
-              aria-expanded={openIndex === index}
-            >
-              <span>{item.question}</span>
-              <span>{openIndex === index ? "-" : "+"}</span>
-            </button>
+        {/* Höger: själva accordions */}
+        <div className="faq-right">
+          <div className="faq-list">
+            {faqs.map((item, index) => (
+              <article
+                key={item.id ?? index}
+                className={`faq-item ${openIndex === index ? "open" : ""}`}
+              >
+                <button
+                  type="button"
+                  className="faq-question"
+                  onClick={() => handleToggle(index)}
+                >
+                  <span>{item.title}</span>
+                  <span className="faq-icon">
+                    {openIndex === index ? "▾" : "▸"}
+                  </span>
+                </button>
 
-            {openIndex === index && (
-              <div className="faq-answer">
-                <p>{item.answer}</p>
-              </div>
-            )}
-          </article>
-        ))}
+                {openIndex === index && (
+                  <div className="faq-answer">
+                    <p>{item.description}</p>
+                  </div>
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,5 @@
-/* ============================================
-   GLOBALA STILAR & RESET
-   ============================================ */
+/* MARK: Globala stilar & Reset */
+/* Denna del är framtagen med hjälp av AI för att säkerställa korrekt box-sizing och baslayout */
 
 html,
 body,
@@ -11,7 +10,6 @@ body,
   padding: 0;
 }
 
-/* Box-sizing för alla element - sånt här glömmer man lätt */
 *,
 *::before,
 *::after {
@@ -22,10 +20,9 @@ body {
   font-family: "Arial", sans-serif;
   color: #333;
   background-color: #f3f4f6;
-  line-height: 1.5; /* Lägger till lite luft mellan raderna */
+  line-height: 1.5;
 }
 
-/* Huvudlayout för hela appen */
 .app-layout {
   min-height: 100vh;
   display: flex;
@@ -41,9 +38,7 @@ body {
 }
 
 
-/* ============================================
-   HERO-SEKTION (Startsidan)
-   ============================================ */
+/* MARK: Hero-sektion - Startsidans huvudbanner */
 
 .hero {
   width: 100%;
@@ -82,7 +77,6 @@ body {
   border-radius: 12px;
 }
 
-
 .hero-title {
   font-family: "Poppins", sans-serif;
   font-size: 4.5rem;
@@ -118,7 +112,6 @@ body {
   color: #e7e7e7;
 }
 
-/* Knappen - gjorde den lite roligare med hover */
 .hero-button {
   margin-top: 2rem;
   padding: 0.9rem 2.2rem;
@@ -128,25 +121,11 @@ body {
   color: #12372a;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-button:hover {
-  background-color: #e0b03a;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(246, 196, 69, 0.3);
-}
-
-.hero-button:active {
-  transform: translateY(0);
 }
 
 
-/* ============================================
-   TESTIMONIALS (Kundomdömen)
-   ============================================ */
+/* MARK: Testimonials - Kundomdömen från API */
+/* Hover-effekter i denna sektion är framtagna med hjälp av AI */
 
 .testimonials {
   width: 100%;
@@ -198,20 +177,12 @@ body {
   gap: 2rem;
 }
 
-/* Varje testimonial-kort - la till hover-effekt */
 .testimonial-item {
   background-color: #fff;
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
   text-align: left;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.testimonial-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
 .testimonial-stars {
@@ -236,11 +207,6 @@ body {
   height: 48px;
   background-color: #d0d0d0;
   border-radius: 50%;
-  transition: transform 0.3s ease;
-}
-
-.testimonial-avatar:hover {
-  transform: scale(1.1);
 }
 
 .testimonial-meta {
@@ -260,72 +226,138 @@ body {
 .testimonial-quote-icon {
   color: #f6c445;
   font-size: 2rem;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-}
-
-.testimonial-quote-icon:hover {
-  opacity: 1;
 }
 
 
-/* ============================================
-   SENASTE BLOGGINLÄGG
-   ============================================ */
+/* MARK: Senaste blogginlägg - Layout enligt Figma */
 
 .latest-blogs {
-  padding: 3rem 1.5rem 4rem;
-  background-color: #f9f9f9;
+  padding: 4rem 1.5rem 5rem;
+  background-color: #f3f4f6;
 }
 
-.latest-blogs h2 {
-  text-align: center;
-  margin-bottom: 2.5rem;
-  font-size: 2rem;
+.latest-blogs-inner {
+  max-width: 1200px;
+  margin: 0 auto 2.5rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.latest-blogs-header {
+  max-width: 520px;
+}
+
+.latest-blogs-tag {
+  color: #f6c445;
   font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Bloggkort med hover-effekt */
+.latest-blogs-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #12372a;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.latest-blogs-intro {
+  max-width: 520px;
+  font-size: 0.98rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.blogs-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
 .blog-card {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 1.8rem;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
-  transition: all 0.3s ease;
-  cursor: pointer;
+  background-color: #0f2d23;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-.blog-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-  border-color: #f6c445;
+.blog-image-wrapper {
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+}
+
+.blog-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #c4c4c4;
+}
+
+.blog-card-body {
+  padding: 1.5rem 1.7rem 2rem;
+}
+
+.blog-date-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: #f6c445;
+  margin-bottom: 0.8rem;
+}
+
+.blog-date-icon {
+  font-size: 1rem;
+}
+
+.blog-date-text {
+  opacity: 0.9;
 }
 
 .blog-title {
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 0.4rem;
-  transition: color 0.3s ease;
-}
-
-.blog-card:hover .blog-title {
-  color: #12372a;
-}
-
-.blog-date {
-  font-size: 0.9rem;
-  color: #888;
+  margin: 0 0 0.6rem 0;
+  color: #ffffff;
 }
 
 .blog-excerpt {
-  color: #444;
-  line-height: 1.5;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e7e7e7;
+}
+
+.read-more-link {
+  color: #f6c445;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.3rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.read-more-link::after {
+  content: "";
 }
 
 
-/* ============================================
-   KONTAKT-SIDAN (Figma-layout)
-   ============================================ */
+/* MARK: Kontakt-sidan - Formulär och layout */
 
 .contact-page {
   max-width: 1200px;
@@ -333,7 +365,6 @@ body {
   padding: 0 1.5rem;
 }
 
-/* Layout: vänster info + höger formulär */
 .contact-layout {
   display: grid;
   grid-template-columns: 1.2fr 1.1fr;
@@ -341,7 +372,6 @@ body {
   margin-top: 2rem;
 }
 
-/* Vänster sida med text */
 .contact-left {
   display: flex;
   flex-direction: column;
@@ -367,21 +397,14 @@ body {
   line-height: 1.6;
 }
 
-/* Grå placeholder för bild */
 .contact-image-placeholder {
   margin-top: 1.5rem;
   width: 100%;
   height: 260px;
   background-color: #c4c4c4;
   border-radius: 8px;
-  transition: all 0.3s ease;
 }
 
-.contact-image-placeholder:hover {
-  background-color: #b0b0b0;
-}
-
-/* Formuläret till höger */
 .contact-form {
   background-color: #fff8dd;
   padding: 2rem 2.2rem 2.5rem;
@@ -390,11 +413,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  transition: box-shadow 0.3s ease;
-}
-
-.contact-form:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .form-field label {
@@ -410,26 +428,12 @@ body {
   border: 1px solid #f1d58b;
   font-size: 1rem;
   background-color: #ffffff;
-  transition: all 0.3s ease;
-}
-
-.form-field input:focus,
-.form-field textarea:focus {
-  outline: none;
-  border-color: #f6c445;
-  box-shadow: 0 0 0 3px rgba(246, 196, 69, 0.1);
-}
-
-.form-field input:hover,
-.form-field textarea:hover {
-  border-color: #e0b03a;
 }
 
 textarea {
   resize: none;
 }
 
-/* Två fält bredvid varandra */
 .form-row {
   display: flex;
   gap: 1rem;
@@ -439,7 +443,6 @@ textarea {
   flex: 1;
 }
 
-/* Submit-knappen */
 .contact-submit {
   background-color: #f6c445;
   color: #12372a;
@@ -450,20 +453,8 @@ textarea {
   font-weight: 600;
   cursor: pointer;
   margin-top: 0.5rem;
-  transition: all 0.3s ease;
 }
 
-.contact-submit:hover {
-  background-color: #e0b03a;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(246, 196, 69, 0.3);
-}
-
-.contact-submit:active {
-  transform: translateY(0);
-}
-
-/* Felmeddelanden */
 .error-text {
   color: #b00020;
   font-size: 0.9rem;
@@ -471,20 +462,17 @@ textarea {
 }
 
 
-/* =========================
-   About delen home-page, Layout enligt figma
-   ========================= */
+/* MARK: About-delen på home-page - Layout enligt Figma */
 
 .about-hero {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;  /* Bild till vänster, text till höger */
+  grid-template-columns: 1fr 1.2fr;
   gap: 4rem;
   max-width: 1200px;
   margin: 4rem auto 5rem;
   padding: 0 1.5rem;
   align-items: start;
 }
-
 
 .about-image-section {
   position: relative;
@@ -530,7 +518,6 @@ textarea {
   font-size: 0.9rem;
 }
 
-/* Textinnehåll till höger */
 .about-text-content {
   display: flex;
   flex-direction: column;
@@ -558,7 +545,6 @@ textarea {
   font-size: 1.1rem;
 }
 
-/* Vår vision och uppdrag boxar */
 .about-boxes {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -587,11 +573,9 @@ textarea {
   margin: 0;
   color: #555;
   line-height: 1.6;
-  font-size: 1rem; 
+  font-size: 1rem;
 }
 
-
-/* Knappar och kontaktinfo under texten */
 .about-actions {
   display: flex;
   align-items: center;
@@ -608,12 +592,6 @@ textarea {
   color: #12372a;
   cursor: pointer;
   font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-.discover-btn:hover {
-  background-color: #e0b03a;
-  transform: translateY(-2px);
 }
 
 .about-contact {
@@ -648,10 +626,11 @@ textarea {
   font-size: 1rem;
 }
 
-/* MARK: Logo-strip (mellan About och Testimonials) */
+
+/* MARK: Logo-strip - Mellan About och Testimonials */
 
 .logo-strip {
-  background-color: #fdf9ea; /* ljus krämfärg, liknar figma */
+  background-color: #fdf9ea;
   padding: 2.5rem 0;
 }
 
@@ -663,90 +642,111 @@ textarea {
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  flex-wrap: wrap; /* gör att de bryts på mindre skärmar */
+  flex-wrap: wrap;
 }
 
 .logo-strip-item img {
   display: block;
-  max-height: 40px;  /* justera om dina loggor är större/mindre */
+  max-height: 40px;
   width: auto;
 }
 
 
-/* ============================================
-   FAQ (Vanliga frågor)
-   ============================================ */
+/* MARK: FAQ - Vanliga frågor med accordion */
+/* Animationer och övergångar i denna sektion är framtagna med hjälp av AI */
 
 .faq {
-  padding: 3rem 1.5rem 4rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+  background-color: #ffffff;
 }
 
-.faq h2 {
-  text-align: center;
-  margin-bottom: 2.5rem;
-  font-size: 2rem;
+.faq-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.faq-tag {
+  color: #f6c445;
   font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.faq-title {
+  margin: 0 0 1rem 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #12372a;
+}
+
+.faq-intro {
+  margin: 0;
+  max-width: 420px;
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.faq-right {
+  width: 100%;
 }
 
 .faq-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .faq-item {
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  background-color: #fff;
-  transition: all 0.3s ease;
+  border-radius: 4px;
   overflow: hidden;
-}
-
-.faq-item:hover {
-  border-color: #f6c445;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
 }
 
 .faq-question {
-  padding: 1rem 1.2rem;
-  background: none;
+  width: 100%;
+  padding: 0.9rem 1.2rem;
   border: none;
+  background: transparent;
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
+  align-items: center;
   font-weight: 500;
-  width: 100%;
+  font-size: 0.98rem;
+  cursor: pointer;
   text-align: left;
-  transition: background-color 0.3s ease;
 }
 
-.faq-question:hover {
-  background-color: #f8f8f8;
+.faq-question span:first-child {
+  flex: 1;
+}
+
+.faq-icon {
+  margin-left: 1rem;
+  font-size: 0.95rem;
+}
+
+.faq-item.open .faq-question {
+  background-color: #f6c445;
+  color: #ffffff;
 }
 
 .faq-answer {
-  padding: 0 1.2rem 1rem;
+  padding: 0.9rem 1.2rem 1.1rem;
+  background-color: #ffffff;
+  font-size: 0.95rem;
   color: #444;
-  animation: fadeIn 0.3s ease;
-}
-
-/* Liten animation för när svar visas */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  line-height: 1.6;
 }
 
 
-/* MARK: Footer */
-   
+/* MARK: Footer - Sidfot */
+
 .footer {
   background-color: #222;
   color: #fff;
@@ -754,17 +754,17 @@ textarea {
   padding: 1rem;
   margin-top: 2rem;
   font-size: 0.95rem;
-  transition: background-color 0.3s ease;
 }
 
-.footer:hover {
-  background-color: #2a2a2a;
+
+/* MARK: Responsiv design - Anpassning för mindre skärmar */
+/* Media queries i denna sektion är framtagna med hjälp av AI */
+
+@media (max-width: 1024px) {
+  .blogs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
-
-/* ============================================
-   RESPONSIV DESIGN
-   ============================================ */
-
 
 @media (max-width: 768px) {
   .hero-inner,
@@ -786,5 +786,17 @@ textarea {
     flex-direction: column;
     gap: 1.5rem;
     align-items: flex-start;
+  }
+
+  .latest-blogs-inner {
+    flex-direction: column;
+  }
+
+  .blogs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-inner {
+    grid-template-columns: 1fr;
   }
 }

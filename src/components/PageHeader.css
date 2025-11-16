@@ -1,20 +1,24 @@
+/* =========================================================
+   PAGE HEADER (Används för About / Contact / etc.)
+   ========================================================= */
+
 .page-header {
   width: 100%;
-  background-color: rgba(18, 55, 42, 0.8); /* 12372A @ 80% */
+  background-color: rgba(18, 55, 42, 0.8); /* #12372A @ 80% opacity */
 }
 
 .page-header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 1.5rem 3rem 1.5rem;
+  padding: 4rem 1.5rem 3rem;
   text-align: left;
 }
 
 .page-header h1 {
   font-size: 3rem;
-  margin: 0 0 1rem 0;
   font-weight: 600;
-  color: #fdfdfd; /* ljus text mot mörk bakgrund */
+  margin: 0 0 1rem;
+  color: #fdfdfd; /* Ljus text mot mörk bakgrund */
 }
 
 .page-header p {

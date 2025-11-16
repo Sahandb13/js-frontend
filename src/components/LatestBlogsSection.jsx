@@ -1,4 +1,5 @@
-// MARK: LatestBlogsSection (egen komponent för bloggsektionen) {/* Tagen från DOM -Selektorer & Events */} 
+// MARK: LatestBlogsSection – visar bloggkort i grid-layout
+// Kommentarer: Dessa delar är hämtade från DOM – Selektorer & Events
 
 export default function LatestBlogsSection({ blogs }) {
   return (
@@ -8,9 +9,16 @@ export default function LatestBlogsSection({ blogs }) {
       <div className="blogs-grid">
         {blogs.map((blog, index) => (
           <article key={index} className="blog-card">
-            <h3 className="blog-title">{blog.title}</h3> {/* Tagen från DOM -Selektorer & Events */} 
-            <p className="blog-date">{blog.date}</p> {/* Tagen från DOM -Selektorer & Events */}
-            <p className="blog-excerpt">{blog.excerpt}</p> {/* Tagen från DOM -Selektorer & Events */}
+
+            {/* Tagen från DOM - Selektorer & Events */}
+            <h3 className="blog-title">{blog.title}</h3>
+
+            {/* Tagen från DOM - Selektorer & Events */}
+            <p className="blog-date">{blog.date}</p>
+
+            {/* Tagen från DOM - Selektorer & Events */}
+            <p className="blog-excerpt">{blog.excerpt}</p>
+
           </article>
         ))}
       </div>

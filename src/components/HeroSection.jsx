@@ -1,8 +1,11 @@
+// MARK: HeroSection – startsidans hero med text, CTA och bild
+
 export default function HeroSection({ ctaLabel, onCtaClick }) {
   return (
     <section className="hero">
       <div className="hero-inner">
 
+        {/* MARK: Vänster kolumn – huvudtext och CTA */}
         <div className="hero-left">
           <p className="hero-welcome">Welcome to StorAid</p>
 
@@ -24,9 +27,10 @@ export default function HeroSection({ ctaLabel, onCtaClick }) {
           )}
         </div>
 
+        {/* MARK: Höger kolumn – hero-bild */}
         <div className="hero-right">
           <img  
-            src="/public/Rectangle2.svg"
+            src="/Rectangle2.svg"
             alt="Storage Illustration"
             className="hero-image"
           />

@@ -104,7 +104,6 @@ export default function ContactUs() {
               tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
             </p>
 
-            <div className="contact-image-placeholder" />
           </div>
 
           {/* Höger kolumn - kontaktformulär */}

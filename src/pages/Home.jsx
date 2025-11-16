@@ -67,7 +67,7 @@ export default function Home() {
     }
   };
 
-  // Ladda all data när komponenten mountas
+  // Ladda all data när komponenten mountas, Framtagen med hjälp av AI
   useEffect(() => {
     fetchTestimonials();
     fetchBlogs();
@@ -86,7 +86,7 @@ export default function Home() {
       {/* Om oss-sektion - företagspresentation */}
       <section className="about-hero">
         <div className="about-image-section">
-          <div className="about-image-placeholder">
+          <div className="about-image-wrapper">
             <img src="/about-hero.jpg" alt="About Us" className="about-image" />
           </div>
 

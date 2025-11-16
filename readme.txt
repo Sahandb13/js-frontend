@@ -1,5 +1,8 @@
 StorAid – Inlämningsuppgift (React + Web API). Här siktar jag på G
 
+Denna sida är framtagen med hjälp av ai i viss mån. Jag har använt AI för att få in koder till delar jag själv inte förstått eller hunnit lära mig
+Jag har markerat upp vart det används ai på ett tydligt sätt. 
+
 Detta är min inlämningsuppgift där jag byggt upp en webbplats i React (Vite) utifrån en given Figma-design. Fokus i uppgiften är att använda återanvändbara komponenter och hämta data från ett Web API.
 
 

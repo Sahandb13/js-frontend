@@ -1,33 +1,32 @@
 // MARK: TestimonialsSection
-// Layout och struktur är delvis framtagen med hjälp av AI (justerad manuellt).
+// Denna komponent visar kundomdömen med design enligt Figma-filen
+// Använder fallback-data med exakt samma text som i designen
 
 export default function TestimonialsSection({ testimonials = [] }) {
+  // Backup-data med exakt samma text som i Figma
   const fallbackTestimonials = [
     {
       id: 1,
-      text:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut libero lectus, porta nec turpis sit amet, lobortis fringilla ante.",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut libero lectus, porta nec turpis sit amet, lobortis fringilla ante.",
       author: "Aiden Harvey",
       role: "Customer",
     },
     {
       id: 2,
-      text:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut libero lectus, porta nec turpis sit amet, lobortis fringilla ante.",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut libero lectus, porta nec turpis sit amet, lobortis fringilla ante.",
       author: "Carrisa Jocelyn",
       role: "Customer",
     },
     {
       id: 3,
-      text:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut libero lectus, porta nec turpis sit amet, lobortis fringilla ante.",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut libero lectus, porta nec turpis sit amet, lobortis fringilla ante.",
       author: "Celvin Gabriel",
       role: "Customer",
     },
   ];
 
-  const itemsToRender =
-    testimonials && testimonials.length > 0 ? testimonials : fallbackTestimonials;
+  // Väljer vilka testimonials att visa
+  const displayTestimonials = testimonials.length ? testimonials : fallbackTestimonials;
 
   return (
     <section className="testimonials">
@@ -45,25 +44,23 @@ export default function TestimonialsSection({ testimonials = [] }) {
         </p>
 
         <div className="testimonials-list">
-          {itemsToRender.map((item, index) => (
+          {displayTestimonials.map((testimonial, index) => (
             <article
-              key={item.id ?? index}
+              key={testimonial.id || index}
               className="testimonial-item"
             >
               <div className="testimonial-stars">★★★★★</div>
 
-              <p className="testimonial-text">"{item.text}"</p>
+              <p className="testimonial-text">"{testimonial.text}"</p>
 
               <div className="testimonial-footer">
                 <div className="testimonial-avatar" />
                 <div className="testimonial-meta">
                   <p className="testimonial-name">
-                    {item.author ?? item.name}
+                    {testimonial.author || testimonial.name}
                   </p>
-
-                  {/* Här tvingar vi rollen till svensk text */}
                   <p className="testimonial-role">
-                    {item.role === "Customer" ? "Kund" : item.role ?? "Kund"}
+                    {testimonial.role === "Customer" ? "Kund" : testimonial.role || "Kund"}
                   </p>
                 </div>
                 <div className="testimonial-quote-icon">❞</div>

@@ -1,19 +1,13 @@
 import PageHeader from "../components/PageHeader";
 
-// MARK: About-sida
 export default function AboutUs() {
   return (
     <div className="about-page">
       <PageHeader title="About Us" />
 
       <section className="about-hero">
-        {/* Vänster: Bild + stats */}
         <div className="about-image-wrapper">
-          <img
-            src="/about-hero.jpg"
-            alt="Storage facility"
-            className="about-image"
-          />
+         <img src="/about-hero.jpg" alt="About Us" className="about-image" />
 
           <div className="about-stats">
             <div className="stat">
@@ -31,10 +25,13 @@ export default function AboutUs() {
           </div>
         </div>
 
-        {/* Höger: text */}
+        {/* Höger: text, vision, mission, knapp + telefon */}
         <div className="about-info">
+          <p className="about-tag">About Us</p>
+
           <h2 className="about-title">
-            Providing a Safe Space for Your Treasured Items <br />
+            Providing a Safe Space for<br />
+            Your Treasured Items
           </h2>
 
           <p className="about-text">

@@ -11,7 +11,7 @@ function formatDate(dateString) {
   });
 }
 
-function getExcerpt(text, maxLength = 180) {
+function getExcerpt(text, maxLength = 180) {  // Framtagen med hjälp av AI
   if (text.length <= maxLength) return text;
   return text.slice(0, maxLength) + "…";
 }
@@ -38,12 +38,12 @@ function BlogCard({ blog }) {
         {/* Titel */}
         <h3 className="blog-title">{blog.title}</h3>
 
-        {/* Text */}
+        {/* Text, // Framtagen med hjälp av AI */}
         <p className="blog-excerpt">
-          {expanded ? blog.description : getExcerpt(blog.description)}
+          {expanded ? blog.description : getExcerpt(blog.description)} 
         </p>
 
-        {/*  READ MORE / LESS */}
+        {/*  READ MORE / LESS // Framtagen med hjälp av AI*/}
         <p
           className="read-more-link"
           onClick={() => setExpanded((prev) => !prev)}
@@ -55,7 +55,7 @@ function BlogCard({ blog }) {
   );
 }
 
-// Huvudsektionen
+// Huvudsektionen, visar senaste bloggarna i ett rutnät
 export default function LatestBlogsSection({ blogs = [] }) {
   return (
     <section className="latest-blogs">

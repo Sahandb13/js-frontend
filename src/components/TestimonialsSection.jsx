@@ -2,8 +2,7 @@
 // Layout och struktur är delvis framtagen med hjälp av AI (justerad manuellt).
 
 export default function TestimonialsSection({ testimonials = [] }) {
-
-  const fallbackTestimonials = [ // Skulle api anrop misslyckas så visas dessa testimonials
+  const fallbackTestimonials = [
     {
       id: 1,
       text:
@@ -51,7 +50,7 @@ export default function TestimonialsSection({ testimonials = [] }) {
               key={item.id ?? index}
               className="testimonial-item"
             >
-              <div className="testimonial-stars">★★★★</div>
+              <div className="testimonial-stars">★★★★★</div>
 
               <p className="testimonial-text">"{item.text}"</p>
 
@@ -61,8 +60,10 @@ export default function TestimonialsSection({ testimonials = [] }) {
                   <p className="testimonial-name">
                     {item.author ?? item.name}
                   </p>
+
+                  {/* Här tvingar vi rollen till svensk text */}
                   <p className="testimonial-role">
-                    {item.role ?? "Customer"}
+                    {item.role === "Customer" ? "Kund" : item.role ?? "Kund"}
                   </p>
                 </div>
                 <div className="testimonial-quote-icon">❞</div>

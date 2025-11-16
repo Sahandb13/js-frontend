@@ -1,7 +1,5 @@
-/* =========================================================
-   MARK: Globala stilar & Reset
-   Baslayout framtagen med hjälp av AI, justerad manuellt.
-   ========================================================= */
+/* MARK: Globala stilar & Reset
+   Baslayout framtagen med hjälp av AI, justerad manuellt.*/
 
 html,
 body,
@@ -40,10 +38,9 @@ body {
 }
 
 
-/* =========================================================
-   MARK: Hero-sektion – startsidans huvudbanner
-   Struktur och layout inspirerad av Figma, finjusterad med AI-stöd.
-   ========================================================= */
+/* MARK: Hero-sektion – startsidans huvudbanner
+   Struktur och layout inspirerad av Figma, finjusterad med AI-stöd. */
+   
 
 .hero {
   width: 100%;
@@ -129,10 +126,8 @@ body {
 }
 
 
-/* =========================================================
-   MARK: Testimonials – kundomdömen kopplade till API
-   Färgval & grid-struktur skapad med AI, innehåll och hookar av mig.
-   ========================================================= */
+   /* MARK: Testimonials – kundomdömen kopplade till API
+   Färgval & grid-struktur skapad med AI, innehåll och hookar av mig.*/
 
 .testimonials {
   width: 100%;
@@ -236,10 +231,8 @@ body {
 }
 
 
-/* =========================================================
-   MARK: Latest Blogs – kortlayout för bloggdata från API
-   Struktur & färger tagna från Figma, kod delvis AI-assisterad.
-   ========================================================= */
+/* MARK: Latest Blogs – kortlayout för bloggdata från API
+   Struktur & färger tagna från Figma, kod delvis AI-assisterad. */
 
 .latest-blogs {
   padding: 4rem 1.5rem 5rem;
@@ -318,10 +311,8 @@ body {
 }
 
 
-/* =========================================================
-   MARK: Kontakt-sida – layout + formulär
-   Formstilar inspirerade av Figma, struktur satt av mig med stöd av AI.
-   ========================================================= */
+/* MARK: Kontakt-sida – layout + formulär
+   Formstilar inspirerade av Figma, struktur satt av mig med stöd av AI. */
 
 .contact-page {
   max-width: 1200px;
@@ -426,10 +417,9 @@ textarea {
 }
 
 
-/* =========================================================
-   MARK: About-delen på home-page 
-   Layout enligt Figma, kod struktur med AI-stöd men anpassad manuellt.
-   ========================================================= */
+/* MARK: About-delen på home-page 
+   Layout enligt Figma, kod struktur med AI-stöd men anpassad manuellt. */
+
 
 .about-hero {
   display: grid;
@@ -586,9 +576,7 @@ textarea {
 }
 
 
-/* =========================================================
-   MARK: Logo-strip – rad med logotyper mellan About & Testimonials
-   ========================================================= */
+   /* MARK: Logo-strip – rad med logotyper mellan About & Testimonials*/
 
 .logo-strip {
   background-color: #fdf9ea;
@@ -613,10 +601,10 @@ textarea {
 }
 
 
-/* =========================================================
+/* 
    MARK: FAQ – Vanliga frågor med accordion
-   Accordion-layout inspirerad av uppgiften, finjusterad med AI-stöd.
-   ========================================================= */
+   Accordion-layout inspirerad av uppgiften, finjusterad med AI-stöd. */
+  
 
 .faq {
   padding: 4rem 1.5rem 5rem;
@@ -708,9 +696,8 @@ textarea {
 }
 
 
-/* =========================================================
-   MARK: Footer
-   ========================================================= */
+/* MARK: Footer
+ 
 
 .footer {
   background-color: #222;
@@ -722,10 +709,8 @@ textarea {
 }
 
 
-/* =========================================================
-   MARK: Responsiv design – enklare anpassning för mindre skärmar
-   Layouten här togs fram med AI-stöd, justerad efter behov.
-   ========================================================= */
+/*  MARK: Responsiv design – enklare anpassning för mindre skärmar
+   Layouten här togs fram med AI-stöd, justerad efter behov. */
 
 @media (max-width: 1024px) {
   .blogs-grid {

@@ -49,7 +49,7 @@ export default function TestimonialsSection({ testimonials = [] }) {
               key={testimonial.id || index}
               className="testimonial-item"
             >
-              <div className="testimonial-stars">★★★★★</div>
+              <div className="testimonial-stars">★★★★</div>
 
               <p className="testimonial-text">"{testimonial.text}"</p>
 

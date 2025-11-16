@@ -16,7 +16,7 @@ function getExcerpt(text, maxLength = 180) {
   return text.slice(0, maxLength) + "…";
 }
 
-// ⭐ Enskilt bloggkort-komponent (fixar useState korrekt)
+//  Enskilt bloggkort-komponent
 function BlogCard({ blog }) {
   const [expanded, setExpanded] = useState(false);
 
@@ -43,7 +43,7 @@ function BlogCard({ blog }) {
           {expanded ? blog.description : getExcerpt(blog.description)}
         </p>
 
-        {/* ⭐ READ MORE / LESS */}
+        {/*  READ MORE / LESS */}
         <p
           className="read-more-link"
           onClick={() => setExpanded((prev) => !prev)}
@@ -55,7 +55,7 @@ function BlogCard({ blog }) {
   );
 }
 
-// ⭐ Huvudsektionen
+// Huvudsektionen
 export default function LatestBlogsSection({ blogs = [] }) {
   return (
     <section className="latest-blogs">

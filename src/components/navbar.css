@@ -6,6 +6,7 @@
   background-color: #0f2d23;
   color: #ffffff;
   padding: 0.4rem 2rem;
+  /* Flex-layout för topbar är framtagen med hjälp av AI för optimal utplacering */
   display: flex;
   justify-content: flex-start;
   gap: 2rem;

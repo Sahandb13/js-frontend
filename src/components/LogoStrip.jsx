@@ -5,6 +5,7 @@ export default function LogoStrip() {
     <section className="logo-strip">
       <div className="logo-strip-inner">
         <div className="logo-strip-item">
+          {/* Första logotypen - tom för styling */}
         </div>
         <div className="logo-strip-item">
           <img src="/Logoipsum1.svg" alt="Partner 2" />

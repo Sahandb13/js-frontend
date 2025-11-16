@@ -5,17 +5,17 @@ import "./Navbar.css";
 export default function Navbar() {
   return (
     <header>
-      {/* Övre kontaktbar */}
+      {/* Övre kontaktbar - denna sektion är framtagen med hjälp av AI för kontaktinformation layout */}
       <div className="topbar">
         <span>📞 +46 8 123 122 44</span>
         <span>✉ contact@domain.com</span>
       </div>
 
-      {/* Huvudmenyn */}
+      {/* Huvudmenyn med navigation */}
       <nav className="navbar">
         <div className="nav-inner">
 
-          {/* Logo-bild */}
+          {/* Logo med länk till startsidan */}
           <Link to="/" className="nav-logo">
             <img 
               src="/Logo.svg" 
@@ -24,14 +24,14 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Navigationslänkar */}
+          {/* Navigationslänkar till sidorna */}
           <div className="nav-links">
             <Link to="/">Home</Link>
             <Link to="/about-us">About Us</Link>
             <Link to="/contact-us">Contact Us</Link>
           </div>
 
-          {/* Call-To-Action knapp */}
+          {/* CTA-knapp för att boka */}
           <Link to="/contact-us" className="nav-cta">
             Book Now
           </Link>

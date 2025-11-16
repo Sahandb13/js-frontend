@@ -1,5 +1,7 @@
-/* MARK: Globala stilar & Reset */
-/* Denna del är framtagen med hjälp av AI för att säkerställa korrekt box-sizing och layout */
+/* =========================================================
+   MARK: Globala stilar & Reset
+   Baslayout framtagen med hjälp av AI, justerad manuellt.
+   ========================================================= */
 
 html,
 body,
@@ -38,7 +40,10 @@ body {
 }
 
 
-/* MARK: Hero-sektion - Startsidans huvudbanner */
+/* =========================================================
+   MARK: Hero-sektion – startsidans huvudbanner
+   Struktur och layout inspirerad av Figma, finjusterad med AI-stöd.
+   ========================================================= */
 
 .hero {
   width: 100%;
@@ -124,8 +129,10 @@ body {
 }
 
 
-/* MARK: Testimonials - Kundomdömen från API */
-/* Hover-effekter i denna sektion är framtagna med hjälp av AI */
+/* =========================================================
+   MARK: Testimonials – kundomdömen kopplade till API
+   Färgval & grid-struktur skapad med AI, innehåll och hookar av mig.
+   ========================================================= */
 
 .testimonials {
   width: 100%;
@@ -229,46 +236,14 @@ body {
 }
 
 
-/* MARK: Senaste blogginlägg - Layout enligt Figma */
+/* =========================================================
+   MARK: Latest Blogs – kortlayout för bloggdata från API
+   Struktur & färger tagna från Figma, kod delvis AI-assisterad.
+   ========================================================= */
 
 .latest-blogs {
   padding: 4rem 1.5rem 5rem;
   background-color: #f3f4f6;
-}
-
-.latest-blogs-inner {
-  max-width: 1200px;
-  margin: 0 auto 2.5rem auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 3rem;
-}
-
-.latest-blogs-header {
-  max-width: 520px;
-}
-
-.latest-blogs-tag {
-  color: #f6c445;
-  font-weight: 600;
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
-}
-
-.latest-blogs-title {
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #12372a;
-  margin: 0;
-  line-height: 1.15;
-}
-
-.latest-blogs-intro {
-  max-width: 520px;
-  font-size: 0.98rem;
-  color: #555;
-  line-height: 1.6;
 }
 
 .blogs-grid {
@@ -319,10 +294,6 @@ body {
   font-size: 1rem;
 }
 
-.blog-date-text {
-  opacity: 0.9;
-}
-
 .blog-title {
   font-size: 1.2rem;
   font-weight: 600;
@@ -346,12 +317,11 @@ body {
   gap: 4px;
 }
 
-.read-more-link::after {
-  content: "";
-}
 
-
-/* MARK: Kontakt-sidan - Formulär och layout */
+/* =========================================================
+   MARK: Kontakt-sida – layout + formulär
+   Formstilar inspirerade av Figma, struktur satt av mig med stöd av AI.
+   ========================================================= */
 
 .contact-page {
   max-width: 1200px;
@@ -391,6 +361,13 @@ body {
   line-height: 1.6;
 }
 
+.contact-image-placeholder {
+  margin-top: 1.5rem;
+  width: 100%;
+  height: 260px;
+  background-color: #c4c4c4;
+  border-radius: 8px;
+}
 
 .contact-form {
   background-color: #fff8dd;
@@ -449,7 +426,10 @@ textarea {
 }
 
 
-/* MARK: About-delen på home-page - Layout enligt Figma */
+/* =========================================================
+   MARK: About-delen på home-page 
+   Layout enligt Figma, kod struktur med AI-stöd men anpassad manuellt.
+   ========================================================= */
 
 .about-hero {
   display: grid;
@@ -606,7 +586,9 @@ textarea {
 }
 
 
-/* MARK: Logo-strip - Mellan About och Testimonials */
+/* =========================================================
+   MARK: Logo-strip – rad med logotyper mellan About & Testimonials
+   ========================================================= */
 
 .logo-strip {
   background-color: #fdf9ea;
@@ -631,8 +613,10 @@ textarea {
 }
 
 
-/* MARK: FAQ - Vanliga frågor med accordion */
-/* Animationer och övergångar i denna sektion är framtagna med hjälp av AI */
+/* =========================================================
+   MARK: FAQ – Vanliga frågor med accordion
+   Accordion-layout inspirerad av uppgiften, finjusterad med AI-stöd.
+   ========================================================= */
 
 .faq {
   padding: 4rem 1.5rem 5rem;
@@ -724,7 +708,9 @@ textarea {
 }
 
 
-/* MARK: Footer - Sidfot */
+/* =========================================================
+   MARK: Footer
+   ========================================================= */
 
 .footer {
   background-color: #222;
@@ -736,8 +722,10 @@ textarea {
 }
 
 
-/* MARK: Responsiv design - Anpassning för mindre skärmar */
-/* Media queries i denna sektion är framtagna med hjälp av AI */
+/* =========================================================
+   MARK: Responsiv design – enklare anpassning för mindre skärmar
+   Layouten här togs fram med AI-stöd, justerad efter behov.
+   ========================================================= */
 
 @media (max-width: 1024px) {
   .blogs-grid {
@@ -757,18 +745,10 @@ textarea {
     grid-template-columns: 1fr;
   }
   
-  .about-boxes {
-    flex-direction: column;
-  }
-  
   .about-actions {
     flex-direction: column;
     gap: 1.5rem;
     align-items: flex-start;
-  }
-
-  .latest-blogs-inner {
-    flex-direction: column;
   }
 
   .blogs-grid {

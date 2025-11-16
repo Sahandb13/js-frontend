@@ -161,7 +161,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(18, 55, 42, 0.92);
+  background: rgba(18, 55, 42, 0.70);
   z-index: 0;
 }
 
@@ -586,9 +586,10 @@ textarea {
 .about-box p {
   margin: 0;
   color: #555;
-  line-height: 1.5;
-  font-size: 0.95rem;
+  line-height: 1.6;
+  font-size: 1rem; 
 }
+
 
 /* Knappar och kontaktinfo under texten */
 .about-actions {
@@ -645,6 +646,30 @@ textarea {
   color: #12372a;
   font-weight: 600;
   font-size: 1rem;
+}
+
+/* MARK: Logo-strip (mellan About och Testimonials) */
+
+.logo-strip {
+  background-color: #fdf9ea; /* ljus krämfärg, liknar figma */
+  padding: 2.5rem 0;
+}
+
+.logo-strip-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap; /* gör att de bryts på mindre skärmar */
+}
+
+.logo-strip-item img {
+  display: block;
+  max-height: 40px;  /* justera om dina loggor är större/mindre */
+  width: auto;
 }
 
 

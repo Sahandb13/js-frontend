@@ -1,32 +1,19 @@
 // MARK: TestimonialsSection
-// Denna komponent visar kundomdömen med design enligt Figma-filen
-// Använder fallback-data med exakt samma text som i designen
+// Visar kundomdömen från API
 
 export default function TestimonialsSection({ testimonials = [] }) {
-  // Backup-data med exakt samma text som i Figma
-  const fallbackTestimonials = [
-    {
-      id: 1,
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut libero lectus, porta nec turpis sit amet, lobortis fringilla ante.",
-      author: "Aiden Harvey",
-      role: "Customer",
-    },
-    {
-      id: 2,
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut libero lectus, porta nec turpis sit amet, lobortis fringilla ante.",
-      author: "Carrisa Jocelyn",
-      role: "Customer",
-    },
-    {
-      id: 3,
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut libero lectus, porta nec turpis sit amet, lobortis fringilla ante.",
-      author: "Celvin Gabriel",
-      role: "Customer",
-    },
-  ];
-
-  // Väljer vilka testimonials att visa
-  const displayTestimonials = testimonials.length ? testimonials : fallbackTestimonials;
+  // Om det inte finns några testimonials, visa ett meddelande
+  if (testimonials.length === 0) {
+    return (
+      <section className="testimonials">
+        <div className="testimonials-inner">
+          <p className="testimonials-tag">Testimonials</p>
+          <h2 className="testimonials-heading">See What Our Client Have to Say</h2>
+          <p>No testimonials available at the moment.</p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="testimonials">
@@ -44,23 +31,31 @@ export default function TestimonialsSection({ testimonials = [] }) {
         </p>
 
         <div className="testimonials-list">
-          {displayTestimonials.map((testimonial, index) => (
+          {testimonials.map((testimonial) => (
             <article
-              key={testimonial.id || index}
+              key={testimonial.id}
               className="testimonial-item"
             >
-              <div className="testimonial-stars">★★★★</div>
+              <div className="testimonial-stars">
+                {'★'.repeat(testimonial.rating || 5)}
+              </div>
 
-              <p className="testimonial-text">"{testimonial.text}"</p>
+              <p className="testimonial-text">"{testimonial.comment}"</p>
 
               <div className="testimonial-footer">
-                <div className="testimonial-avatar" />
+                <div className="testimonial-avatar">
+                  <img 
+                    src={testimonial.avatarUrl} 
+                    alt={testimonial.name}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
+                  />
+                </div>
                 <div className="testimonial-meta">
                   <p className="testimonial-name">
-                    {testimonial.author || testimonial.name}
+                    {testimonial.name}
                   </p>
                   <p className="testimonial-role">
-                    {testimonial.role === "Customer" ? "Kund" : testimonial.role || "Kund"}
+                    {testimonial.companyName}
                   </p>
                 </div>
                 <div className="testimonial-quote-icon">❞</div>

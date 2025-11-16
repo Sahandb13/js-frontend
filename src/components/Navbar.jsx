@@ -14,8 +14,15 @@ export default function Navbar() {
       {/* Huvudmenyn */}
       <nav className="navbar">
         <div className="nav-inner">
-          {/* Logo */}
-          <div className="nav-logo">StorAid</div>
+
+          {/* Logo-bild */}
+          <Link to="/" className="nav-logo">
+            <img 
+              src="/Logo.svg" 
+              alt="StorAid Logo" 
+              className="logo-image" 
+            />
+          </Link>
 
           {/* Navigationslänkar */}
           <div className="nav-links">

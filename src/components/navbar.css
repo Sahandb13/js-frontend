@@ -1,6 +1,4 @@
-/* =========================================================
-   MARK: Topbar (kontaktinfo)
-   ========================================================= */
+/* MARK: Topbar */
 
 .topbar {
   background-color: #0f2d23;
@@ -14,9 +12,7 @@
 }
 
 
-/* =========================================================
-   MARK: Navbar
-   ========================================================= */
+/* MARK: Navbar */
 
 .navbar {
   background-color: #ffffff;
@@ -32,9 +28,7 @@
 }
 
 
-/* -------------------------
-   Logo
-   ------------------------- */
+/* MARK: Logo */
 
 .nav-logo {
   font-size: 1.5rem;
@@ -43,9 +37,7 @@
 }
 
 
-/* -------------------------
-   Navigationslänkar
-   ------------------------- */
+/* MARK: Navigationslänkar */
 
 .nav-links {
   display: flex;
@@ -63,9 +55,7 @@
 }
 
 
-/* -------------------------
-   CTA-knappen (Book Now)
-   ------------------------- */
+/* MARK: Call-to-Action knapp */
 
 .nav-cta {
   background-color: #f6c445;

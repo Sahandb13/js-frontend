@@ -1,4 +1,7 @@
-// MARK: Home-sida - Huvudkomponent för startsidan
+// MARK: Home-sida – huvudkomponent för startsidan
+// Jag har satt upp strukturen för sidan själv. På vissa delar, framför allt kring datahämtning,
+// har jag använt AI som stöd för att få ett bra första utkast och sedan anpassat allt efter projektet.
+
 import { useState, useEffect } from "react";
 import HeroSection from "../components/HeroSection.jsx";
 import TestimonialsSection from "../components/TestimonialsSection.jsx";
@@ -7,7 +10,7 @@ import FAQSection from "../components/FAQSection.jsx";
 import LogoStrip from "../components/LogoStrip.jsx";
 
 export default function Home() {
-  // State för API-data
+  // State för API-data och fel/loader-hantering
   const [faqs, setFaqs] = useState([]);
   const [blogs, setBlogs] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
@@ -16,16 +19,16 @@ export default function Home() {
   const [blogsError, setBlogsError] = useState(null);
   const [faqsError, setFaqsError] = useState(null);
 
-  // Hantera klick på hero-knappen
+  // Hanterar klick på hero-knappen och scrollar ner till "About"-sektionen
   const handleDiscoverClick = () => {
     console.log("Discover more clicked - scrolling to about section");
-    const aboutSection = document.querySelector('.about-hero');
+    const aboutSection = document.querySelector(".about-hero");
     if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
+      aboutSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
-  // Hämta FAQ-data från API
+  // Hämta FAQ-data från API – egen implementation anpassad efter API:et
   const fetchFaqs = async () => {
     try {
       const response = await fetch("https://win25-jsf-assignment.azurewebsites.net/api/faqs");
@@ -37,7 +40,7 @@ export default function Home() {
     }
   };
 
-  // Hämta blogginlägg från API
+  // Hämta blogginlägg från API – också egen lösning baserad på samma mönster
   const fetchBlogs = async () => {
     try {
       const response = await fetch("https://win25-jsf-assignment.azurewebsites.net/api/blogs");
@@ -48,9 +51,11 @@ export default function Home() {
       setBlogsError("Sorry, we couldn't load latest blog posts.");
     }
   };
+  
+  /* MARK: Kundomdömen API-anrop */
 
-  // Hämta kundomdömen från API
-  /* Denna fetch-funktion är framtagen med hjälp av AI för att hantera loading states */
+  // Här använde jag AI som stöd för att strukturera loading- och error-hanteringen,
+  // men jag har själv anpassat flödet och felmeddelanden till appens behov.
   const fetchTestimonials = async () => {
     setIsLoadingTestimonials(true);
     setTestimonialsError(null);
@@ -67,7 +72,9 @@ export default function Home() {
     }
   };
 
-  // Ladda all data när komponenten mountas, Framtagen med hjälp av AI
+  // Ladda all data när komponenten mountas
+  // Jag tog hjälp av AI för första idén att samla anropen här,
+  // men har själv styrt vilka funktioner som körs och hur datan används i sidan.
   useEffect(() => {
     fetchTestimonials();
     fetchBlogs();
@@ -76,14 +83,10 @@ export default function Home() {
 
   return (
     <div className="home-page">
-      
-      {/* Hero-sektion - huvudbanner */}
-      <HeroSection 
-        ctaLabel="Discover More" 
-        onCtaClick={handleDiscoverClick} 
-      />
-
-      {/* Om oss-sektion - företagspresentation */}
+      {/* Hero-sektion – huvudbanner på startsidan */}
+      <HeroSection ctaLabel="Discover More" onCtaClick={handleDiscoverClick} />
+       {/* MARK: Om oss */}
+      {/* Om oss-sektion – presentation av verksamheten */}
       <section className="about-hero">
         <div className="about-image-section">
           <div className="about-image-wrapper">
@@ -117,12 +120,18 @@ export default function Home() {
           <div className="about-boxes">
             <div className="about-box">
               <h3>Vision</h3>
-              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusan tium doloremque laudantium.</p>
+              <p>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusan tium doloremque
+                laudantium.
+              </p>
             </div>
 
             <div className="about-box mission">
               <h3>Our Mission</h3>
-              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusan tium doloremque laudantium.</p>
+              <p>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusan tium doloremque
+                laudantium.
+              </p>
             </div>
           </div>
 
@@ -142,16 +151,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Logostrip - varumärken som förtroar oss */}
+      {/* Logostrip – varumärken som litar på oss */}
       <LogoStrip />
-
-      {/* Kundomdömen - visar feedback från kunder */}
+         {/* MARK: Kundomdömen */}
+      {/* Kundomdömen – visar feedback från kunder */}
       <section className="testimonials-wrapper">
         {isLoadingTestimonials && <p>Loading testimonials...</p>}
         {testimonialsError && (
           <div className="error-state">
             <p>{testimonialsError}</p>
-            <button onClick={fetchTestimonials} className="retry-button">Try Again</button>
+            <button onClick={fetchTestimonials} className="retry-button">
+              Try Again
+            </button>
           </div>
         )}
 
@@ -160,10 +171,15 @@ export default function Home() {
         )}
       </section>
 
-      {/* Senaste blogginlägg - nyttigt innehåll */}
+      {/* MARK: blog */}
+
+      {/* Senaste blogginlägg – nytt innehåll från API */}
       {blogsError ? <p>{blogsError}</p> : <LatestBlogsSection blogs={blogs} />}
 
-      {/* Vanliga frågor - hjälp till användare */}
+
+
+       {/* MARK: FAQSection */}
+      {/* Vanliga frågor – FAQ till användaren */}
       {faqsError ? <p>{faqsError}</p> : <FAQSection faqs={faqs} />}
     </div>
   );

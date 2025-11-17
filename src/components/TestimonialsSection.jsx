@@ -1,5 +1,5 @@
 // MARK: TestimonialsSection
-// Visar kundomdömen från API med korrekt property-mapping
+// Visar kundomdömen från API med korrekt mappande av fält
 
 export default function TestimonialsSection({ testimonials = [] }) {
   // Om inga testimonials finns, visa meddelande
@@ -14,7 +14,7 @@ export default function TestimonialsSection({ testimonials = [] }) {
       </section>
     );
   }
-
+  /* MARK: STARS */
   // Hjälpfunktion för att rendera stjärnor baserat på rating
   /* Denna funktion är framtagen med hjälp av AI för att konvertera rating till visuella stjärnor */
   const renderStars = (rating) => {

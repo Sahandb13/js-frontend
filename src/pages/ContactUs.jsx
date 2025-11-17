@@ -1,10 +1,12 @@
-// MARK: Contact-sida – layout enligt Figma design
+// MARK: Contact-sida – layout enligt Figma-design
+// Jag har byggt upp sidan och formuläret utifrån designen. För vissa delar av
+// API-hanteringen har jag använt AI som stöd och sedan anpassat lösningen själv.
 
 import { useState } from "react";
 import PageHeader from "../components/PageHeader";
 
 export default function ContactUs() {
-  // State för formulärfält
+  // State för formulärfält och valideringsfel
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -12,7 +14,7 @@ export default function ContactUs() {
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
 
-  // Valideringsfunktion för formuläret
+  // Valideringsfunktion för formuläret – anpassad av mig själv för att passa fälten
   function validateForm() {
     const newErrors = {};
 
@@ -31,8 +33,9 @@ export default function ContactUs() {
     return newErrors;
   }
 
-  // Hantera formulärinskick
-  /* Denna funktion är framtagen med hjälp av AI för API-integration och felhantering */
+  // Hantera formulärinskick och koppling mot API
+  // Här använde jag AI som stöd för att strukturera fetch-anrop och felhantering,
+  // men jag har själv anpassat valideringen, payloaden och återställningen av formuläret.
   async function handleSubmit(event) {
     event.preventDefault();
 
@@ -84,12 +87,12 @@ export default function ContactUs() {
 
   return (
     <>
-    
+      {/* Sidhuvud för kontaktsidan */}
       <PageHeader title="Contact Us" />
 
       <section className="contact-page">
         <div className="contact-layout">
-      
+          {/* Vänster kolumn – introduktionstext till kontaktsektionen */}
           <div className="contact-left">
             <p className="contact-tag">Get in Touch</p>
 
@@ -101,10 +104,9 @@ export default function ContactUs() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
               tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
             </p>
-
           </div>
 
-          {/* Höger kolumn - kontaktformulär */}
+          {/* Höger kolumn – kontaktformulär kopplat till API:et */}
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-field">
               <label>

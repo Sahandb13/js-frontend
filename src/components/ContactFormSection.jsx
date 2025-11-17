@@ -1,4 +1,7 @@
-// Enkel kontaktsektion – ett formulär med fält för namn, e-post, telefonnummer, ämne och meddelande.
+// MARK: Kontaktformulär – återanvändbar sektion för kontaktuppgifter
+// Jag satte upp strukturen och valideringen själv. 
+// props-hantering tog jag lite hjälp av AI som bollplank, men har själv finjusterat
+// fälten och logiken så att den passar resten av projektet.
 
 export default function ContactFormSection({
   name,
@@ -12,6 +15,7 @@ export default function ContactFormSection({
 }) {
   return (
     <form className="contact-form" onSubmit={onSubmit}>
+      {/* Namnfält */}
       <div className="form-field">
         <label>
           Namn *<br />
@@ -23,7 +27,8 @@ export default function ContactFormSection({
         </label>
         {errors.name && <p className="error-text">{errors.name}</p>}
       </div>
-      
+
+      {/* E-postfält */}
       <div className="form-field">
         <label>
           E-post *<br />
@@ -36,6 +41,7 @@ export default function ContactFormSection({
         {errors.email && <p className="error-text">{errors.email}</p>}
       </div>
 
+      {/* Telefonnummer */}
       <div className="form-field">
         <label>
           Telefonnummer *<br />
@@ -50,6 +56,7 @@ export default function ContactFormSection({
         )}
       </div>
 
+      {/* Ämne */}
       <div className="form-field">
         <label>
           Ämne *<br />
@@ -62,6 +69,7 @@ export default function ContactFormSection({
         {errors.subject && <p className="error-text">{errors.subject}</p>}
       </div>
 
+      {/* Meddelande */}
       <div className="form-field">
         <label>
           Meddelande *<br />
@@ -74,6 +82,7 @@ export default function ContactFormSection({
         {errors.message && <p className="error-text">{errors.message}</p>}
       </div>
 
+      {/* Submit-knapp */}
       <button type="submit" className="contact-submit">
         Skicka
       </button>

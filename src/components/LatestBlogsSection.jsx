@@ -1,3 +1,6 @@
+/* MARK: LatestBlogsSection */
+// Visar de senaste blogginläggen i ett rutnät med kort
+
 import { useState } from "react";
 
 function formatDate(dateString) {

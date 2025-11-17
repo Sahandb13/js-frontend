@@ -4,7 +4,7 @@
 import { useState } from "react";
 
 export default function FAQSection({ faqs = [] }) {
-  const [openIndex, setOpenIndex] = useState(0); // första öppen
+  const [openIndex, setOpenIndex] = useState(null); 
 
   function handleToggle(index) {
     setOpenIndex((prev) => (prev === index ? null : index));
